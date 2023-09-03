@@ -16,7 +16,7 @@ const About = () => {
           <div className="flex flex-col items-start ">
             <h3 className=" font-bold text-[26px] font-Raleway text-[#25040B] dark:text-[#DFA8B4] ">
             Developer / Engineer</h3>
-            <p className=" italic mt-0 mb-[1rem]">uaum maimolestiae velit sapiente recusandae!</p>
+            <p className=" italic mt-0 mb-[1rem]">Programming is life</p>
             <div className="flex flex-col sm:flex-row w-full justify-between">
               <div className="flex flex-col">
                 {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (

@@ -17,7 +17,7 @@ import contact from "./contact.svg"
 import resume from "./resume.svg"
 import cvImage from "./cvImage.png";
 import bgImage from "./bgImage.jpg";
-
+import project1 from "./project1.jpeg";
 
 export {
     terminal_web,
@@ -39,4 +39,5 @@ export {
     resume,
     cvImage,
     bgImage,
+    project1,
 };

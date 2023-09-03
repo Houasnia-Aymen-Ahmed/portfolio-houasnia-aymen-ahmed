@@ -1,18 +1,18 @@
-import { terminal_web, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD } from "../assets";
+import { project1, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD } from "../assets";
 import { faHouse, faEnvelope, faUser, faFile, faDiagramProject, faTimeline, } from "@fortawesome/free-solid-svg-icons";
 export const projects = [
   {
     id: "project-1",
     title: "Gift Application",
-    imgUrl: terminal_web,
+    imgUrl: webdev,
     stack: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Cloud_messaging'],
     link: 'https://github.com/Houasnia-Aymen-Ahmed'
   },
   {
     id: "project-2",
     title: "Portfolio Webpage",
-    imgUrl: webdev,
-    stack: ['Vite', 'React JS','Tailwind Css'],
+    imgUrl: project1,
+    stack: ['Vite', 'React JS', 'Tailwind Css'],
     link: 'https://github.com/Houasnia-Aymen-Ahmed',
   },
 ];
@@ -85,7 +85,7 @@ export const timeline = [
     title: 'Student',
     duration: 'few months',
     details:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo qui deleniti laboriosam excepturi tempore vel beatae illo accusantium dicta dolorum.',
+      'Basically i\'m still a student at the HNS-RE2SD, and this is my last year. I\'m hoping to explore the software enegineering world more & more, as i\'s my passion.',
   },
   {
     year: '2023',

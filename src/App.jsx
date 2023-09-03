@@ -40,7 +40,7 @@ const App = () => {
       <div className={`bg-black z-[9997] top-0 bottom-0 w-[300px] min-h-screen fixed md:fixed md:left-0 font-inter ${theme === 'dark' ? 'dark' : ''} md:block ${isHeaderVisible ? 'left-[-300px]' : 'left-0'} transition-all ease-in-out duration-500 py-0 px-[15px] overflow-y-auto `}>
         <Headbar />
       </div>
-      <div className=" flex-1 w-[50px] md:w-full h-full bg-no-repeat bg-auto md:bg-contain " style={{ backgroundImage: backgroundImageUrl }}>
+      <div className=" flex-1 w-[50px] md:w-full h-full bg-no-repeat bg-auto xl:bg-contain " style={{ backgroundImage: backgroundImageUrl }}>
         <button
           className="fixed p-2 z-[9999] right-20 top-4 bg-[#F574AD] text-lg rounded-md w-[50px] h-[50px] items-center justify-center md:hidden flex"
           onClick={toggleHeader}>
