@@ -48,9 +48,9 @@ const About = () => {
             <div className='flex flex-col'>
               <p className='text-base max-w-6xl mb-3 font-bold' >
                 Student at the <span>&quot;Higher National School of Renewable Energies, Environment & Sustainable Development (HNS-RE2SD)&quot;</span>
-                & Last year(3/3) in Specialty <span> &quot;Industial Network Engineering & Artificial Intelligence&quot;</span>.</p>
+                & Last year(3/3) in Specialty <span> &quot;Industrial Network Engineering & Artificial Intelligence&quot;</span>.</p>
               <p>Lives at the moment in <span>Batna / Algeria
-                </span>. I can say that i am quite skilled in multiple fields including <span>Unity ARCore</span> Applications Development, <span>Django</span> Back-end Development
+                </span>. I can say that i am quite skilled in multiple fields including <span>Unity ARCore</span> Mobile Applications Development, <span>Django</span> Back-end Development
               </p>
               <p>
                 <span>Programming</span> is my power point, though <span>Graphic Design</span> is my weak one
