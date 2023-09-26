@@ -1,4 +1,4 @@
-import { project1, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD } from "../assets";
+import { project1, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD, project2 } from "../assets";
 import { faHouse, faEnvelope, faUser, faFile, faDiagramProject, faTimeline, } from "@fortawesome/free-solid-svg-icons";
 export const projects = [
   {
@@ -6,14 +6,21 @@ export const projects = [
     title: "Gift Application",
     imgUrl: webdev,
     stack: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Cloud_messaging'],
-    link: 'https://github.com/Houasnia-Aymen-Ahmed'
+    link: 'https://github.com/Houasnia-Aymen-Ahmed/Gift-Application'
   },
   {
     id: "project-2",
     title: "Portfolio Webpage",
     imgUrl: project1,
     stack: ['Vite', 'React JS', 'Tailwind Css'],
-    link: 'https://github.com/Houasnia-Aymen-Ahmed',
+    link: 'https://github.com/Houasnia-Aymen-Ahmed/portfolio-houasnia-aymen-ahmed',
+  },
+  {
+    id: "project-3",
+    title: "WiSetFi company website",
+    imgUrl: project2,
+    stack: ['Vite', 'React JS', 'Tailwind Css', 'Django', ' PostgreSQL', 'Djoser', 'Axios', 'Rest'],
+    link: 'https://github.com/Houasnia-Aymen-Ahmed/WiSetFi-Website',
   },
 ];
 
@@ -23,25 +30,25 @@ export const socialMedia = [
     id: "social-media-1",
     icon: instagram,
     icon2: instagramD,
-    link: "https://www.instagram.com/",
+    link: "https://www.instagram.com/aymen.ahmed.houasnia/",
   },
   {
     id: "social-media-2",
     icon: facebook,
     icon2: facebookD,
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/Leonardo.Albert.ed/",
   },
   {
     id: "social-media-3",
     icon: github,
     icon2: githubD,
-    link: "https://www.github.com/",
+    link: "https://github.com/Houasnia-Aymen-Ahmed",
   },
   {
     id: "social-media-4",
     icon: linkedin,
     icon2: linkedinD,
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/in/aymen-houasnia-126b65234/",
   },
 ];
 
@@ -99,7 +106,7 @@ export const timeline = [
     title: "Industrial Network Engineering & Artificial intelligence",
     duration: '3 years',
     details:
-      'I started my stuides at the field "INEAI, amazed by the program they\'ve put to master it. and the variety of knowledge i\'d get from it ( programming languages, computer science, ai, networking, security) and much more.',
+      'I started my studies at the field "INEAI", amazed by the program they\'ve put to master it. and the variety of knowledge i\'d get from it ( programming languages, computer science, ai, networking, security) and much more.',
   },
   {
     year: '2018',
@@ -118,7 +125,7 @@ export const infos = [
 
   {
     title: 'Website',
-    content: 'www.PersonalBlog.com',
+    content: 'https://houasnia-aymen-ahmed.github.io/portfolio-houasnia-aymen-ahmed/',
   },
 
   {

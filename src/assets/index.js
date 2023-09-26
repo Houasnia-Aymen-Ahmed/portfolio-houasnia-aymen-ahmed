@@ -18,6 +18,7 @@ import resume from "./resume.svg"
 import cvImage from "./cvImage.png";
 import bgImage from "./bgImage.jpg";
 import project1 from "./project1.jpeg";
+import project2 from "./project2.jpeg";
 
 export {
     terminal_web,
@@ -40,4 +41,5 @@ export {
     cvImage,
     bgImage,
     project1,
+    project2,
 };
