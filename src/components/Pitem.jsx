@@ -7,7 +7,7 @@ const Pitem = ({title, imgUrl, stack, link}) => (
     href={link}
     target="_blank"
     rel="noopener noreferrer"
-    className="border-2 border-stone-900 dark:border-white rounded-md overflow-hidden">
+    className="border-2 border-stone-400 dark:border-stone-600 rounded-md hover:scale-[1.025] hover:border-stone-950 dark:hover:border-stone-100 overflow-hidden">
     <img
       src={imgUrl}
       alt="portfolio" 

@@ -1,4 +1,4 @@
-import { project1, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD, project2 } from "../assets";
+import { project1, webdev, instagram, github, linkedin, facebook, instagramD, githubD, linkedinD, facebookD, project2, attendify, guessord, unity_app } from "../assets";
 import { faHouse, faEnvelope, faUser, faFile, faDiagramProject, faTimeline, } from "@fortawesome/free-solid-svg-icons";
 export const projects = [
   {
@@ -21,6 +21,27 @@ export const projects = [
     imgUrl: project2,
     stack: ['Vite', 'React JS', 'Tailwind Css', 'Django', ' PostgreSQL', 'Djoser', 'Axios', 'Rest'],
     link: 'https://github.com/Houasnia-Aymen-Ahmed/WiSetFi-Website',
+  },
+  {
+    id: "project-4",
+    title: "Guessord (Contexto Clone)",
+    imgUrl: guessord,
+    stack: ['Vite', 'Vue JS', 'Tailwind Css', 'Django', 'Axios', 'Rest'],
+    link: 'https://github.com/Houasnia-Aymen-Ahmed/Guessord-Contexto-Clone',
+  },
+  {
+    id: "project-5",
+    title: "Attendify-App",
+    imgUrl: attendify,
+    stack: ['Flutter', 'Dart', 'Firebase', 'Firestore', 'Cloud_messaging'],
+    link: 'https://github.com/Houasnia-Aymen-Ahmed/Attendify-App',
+  },
+  {
+    id: "project-6",
+    title: "Data Monitoring App",
+    imgUrl: unity_app,
+    stack: ['Unity', 'Vuforia'],
+    link: '#',
   },
 ];
 
@@ -90,23 +111,23 @@ export const timeline = [
   {
     year: 'Today',
     title: 'Student',
-    duration: 'few months',
+    duration: 'few months after',
     details:
-      'Basically i\'m still a student at the HNS-RE2SD, and this is my last year. I\'m hoping to explore the software enegineering world more & more, as i\'s my passion.',
+      'Basically i\'m still a student at the HNS-RE2SD, and this is my last year. I\'m hoping to explore the software enegineering world more & more, as it\'s my passion.',
   },
   {
     year: '2023',
     title: 'First Mobile App',
-    duration: '2 years',
+    duration: '2 years after',
     details:
       'I\'ve built my first mobile called "Gift App", using flutter & dart & multiple tools from firebase such as cloud_messaging & firestore. it took 1 month to finish the v1.0.0 and another 3 weeks to finish the v2.0.0, and i\'s still under development for new features',
   },
   {
     year: '2021',
     title: "Industrial Network Engineering & Artificial intelligence",
-    duration: '3 years',
+    duration: '3 years after',
     details:
-      'I started my studies at the field "INEAI", amazed by the program they\'ve put to master it. and the variety of knowledge i\'d get from it ( programming languages, computer science, ai, networking, security) and much more.',
+      'I started my studies at the field "INEAI" (or in french "IRIIA") , amazed by the program they\'ve put to master it. and the variety of knowledge i\'d get from it ( programming languages, computer science, ai, networking, security) and much more.',
   },
   {
     year: '2018',

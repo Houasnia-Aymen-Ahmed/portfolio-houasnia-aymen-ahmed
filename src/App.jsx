@@ -44,9 +44,9 @@ const App = () => {
         <button
           className="fixed p-2 z-[9999] right-20 top-4 bg-[#F574AD] text-lg rounded-md w-[50px] h-[50px] items-center justify-center md:hidden flex"
           onClick={toggleHeader}>
-          {!isHeaderVisible ? <FontAwesomeIcon icon={faClose}
-            className="text-[#130206] dark:text-white" /> : <FontAwesomeIcon icon={faBars}
-              className="text-[#130206] dark:text-white " />}
+          {isHeaderVisible ? <FontAwesomeIcon icon={faBars}
+            className="text-[#130206] dark:text-white " /> : <FontAwesomeIcon icon={faClose}
+              className="text-[#130206] dark:text-white" />}
         </button>
         <button type="button" onClick={handleThemeSwitch} className="fixed p-2 z-[9999] right-5 top-4 bg-[#F574AD] text-lg rounded-md w-[50px] h-[50px]">
           {theme === 'dark' ?

@@ -19,6 +19,9 @@ import cvImage from "./cvImage.png";
 import bgImage from "./bgImage.jpg";
 import project1 from "./project1.jpeg";
 import project2 from "./project2.jpeg";
+import guessord from "./guessord.jpeg";
+import attendify from "./attendify.jpg";
+import unity_app from "./unity_app.jfif";
 
 export {
     terminal_web,
@@ -42,4 +45,7 @@ export {
     bgImage,
     project1,
     project2,
+    attendify,
+    guessord,
+    unity_app
 };
