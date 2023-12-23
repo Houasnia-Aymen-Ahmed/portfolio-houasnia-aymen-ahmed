@@ -15,11 +15,11 @@ module.exports = {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         inter: ["inter", "serif"],
-        raleway: ["Raleway", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"]
       },
       filter: {
-        invert: 'invert(1)',
-      },
+        invert: "invert(1)"
+      }
     },
     screens: {
       xs: "480px",
@@ -28,9 +28,9 @@ module.exports = {
       md: "1060px",
       lg: "1200px",
       xg: "1300px",
-      xgg:"1450px",
-      xl: "1700px",
-    },
+      xgg: "1450px",
+      xl: "1700px"
+    }
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")]
 };
