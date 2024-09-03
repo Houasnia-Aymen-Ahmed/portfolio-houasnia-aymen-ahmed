@@ -146,11 +146,18 @@ export const headbarItems = [
 
 export const timeline = [
   {
-    year: "Today",
-    title: "Student",
-    duration: "few months after",
+    year: "August/2024",
+    title: "First Job",
+    duration: "2 months after",
     details:
-      "Basically i'm still a student at the HNS-RE2SD, and this is my last year. I'm hoping to explore the software enegineering world more & more, as it's my passion."
+      "Signed my first contract as trainee engineer in well service with \"L'ours for Gas & Oil services\" company, working in Hassi Messoud - Algeria"
+  },
+  {
+    year: "2024",
+    title: "Graduated",
+    duration: "1 year after",
+    details:
+      "I Graduated in Juin/2024 after getting 'Excellent' on our Dissertation, The final project was 'AI-Guided neck collar for disc herniations'. after 5 years of studying i finally became 'Industrial Computer science Engineer' specialized in 'Industrial Networking Engineenring & Artificial Intelligence'"
   },
   {
     year: "2023",
