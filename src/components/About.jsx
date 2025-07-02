@@ -11,12 +11,15 @@ const About = () => {
         <Title>About</Title>
       </div>
       <div className=" w-full flex flex-wrap md:flex-row md:gap-8 md:mx-0 my-[1.5rem]  " >
-        <div className=" md:w-[35%]" ><img className="h-auto " src={myPic} alt="" /></div>
+        <div className=" md:w-[35%] flex items-center justify-center"> {/* Added flex centering for image if it's smaller than container */}
+          <img className="h-auto max-w-full rounded-lg shadow-lg" src={myPic} alt="Houasnia Aymen Ahmed" loading="lazy" /> {/* Updated alt, added styling & lazy loading */}
+        </div>
         <div className="flex-1 flex flex-col justify-between  ">
           <div className="flex flex-col items-start ">
-            <h3 className=" font-bold text-[26px] font-Raleway text-[#25040B] dark:text-[#DFA8B4] ">
-            Developer / Engineer</h3>
-            <p className=" italic mt-0 mb-[1rem]">Programming is life</p>
+            <h3 className="font-bold text-[26px] font-raleway text-accent-primary dark:text-accent-primary"> {/* Use Raleway and accent color */}
+              Developer / Engineer
+            </h3>
+            <p className="italic mt-0 mb-[1rem] text-light-text-secondary dark:text-dark-text-secondary">Programming is life</p>
             <div className="flex flex-col sm:flex-row w-full justify-between">
               <div className="flex flex-col">
                 {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (

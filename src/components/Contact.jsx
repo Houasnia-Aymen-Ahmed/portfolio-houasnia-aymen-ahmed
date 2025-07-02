@@ -3,6 +3,7 @@ import React from 'react';
 import Title from './Title';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { createRipple } from '../utils/rippleEffect'; // Import createRipple
 
 const Contact = () => {
   const form = useRef();
@@ -31,14 +32,59 @@ const Contact = () => {
       });
   };
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full">
+    <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full space-y-4"> {/* Added space-y-4 for spacing */}
       <Title>Contact</Title>
-      <input type="text" name="from_name" placeholder="Name" className="p-2 pl-4 bg-transparent border-2 border-black dark:border-white rounded-md focus:outline-none " />
-      <input type="email" name="from_email" placeholder="Email" className="my-2 p-2 pl-4 bg-transparent border-2 border-black dark:border-white rounded-md focus:outline-none" />
-      <p>{see}</p>
-      {errorMessage && <div className="text-red-500 pb-2">{errorMessage}</div>}
-      <textarea name="message" placeholder="Message" rows="10" className="p-2 pl-4 mb-4 bg-transparent border-2 border-black dark:border-white rounded-md focus:outline-none" />
-      <input type="submit" value="Send me a message" className="text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md text-black dark:text-white bg-gradient-to-r dark:from-[#3b1d23] dark:to-[#DFA8B4] from-[#DFA8B4] to-[#3b1d23] drop-shadow-md hover:text-[#DFA8B4] dark:hover:text-[#25040B] dark:hover:from-[#aa8ea0] dark:hover:to-[#aa8ea0] hover:from-[#3b1d23] hover:to-[#3b1d23] " />
+      <div>
+        <label htmlFor="from_name" className="sr-only">Name</label>
+        <input
+          id="from_name"
+          type="text"
+          name="from_name"
+          placeholder="Name"
+          className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
+                     border border-slate-400 dark:border-slate-600
+                     text-light-text-primary dark:text-dark-text-primary
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
+                     transition-shadow" />
+      </div>
+      <div>
+        <label htmlFor="from_email" className="sr-only">Email</label>
+        <input
+          id="from_email"
+          type="email"
+          name="from_email"
+          placeholder="Email"
+          className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
+                     border border-slate-400 dark:border-slate-600
+                     text-light-text-primary dark:text-dark-text-primary
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
+                     transition-shadow" />
+      </div>
+      {see && <p className="text-sm text-accent-primary">{see}</p>} {/* Styled success message */}
+      {errorMessage && <div className="text-red-500 pb-2 text-sm">{errorMessage}</div>} {/* Styled error message */}
+      <div>
+        <label htmlFor="message" className="sr-only">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Message"
+          rows="6" // Reduced rows slightly
+          className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
+                     border border-slate-400 dark:border-slate-600
+                     text-light-text-primary dark:text-dark-text-primary
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
+                     transition-shadow resize-none" /> {/* Added resize-none */}
+      </div>
+      <input
+        type="submit"
+        value="Send me a message"
+        onClick={createRipple} // Add onClick handler
+        className="relative overflow-hidden text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md
+                   text-white bg-accent-primary hover:bg-accent-primary-darker
+                   focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2
+                   dark:focus:ring-offset-dark-bg
+                   cursor-pointer transition-all duration-300 ease-in-out
+                   motion-safe:hover:animate-pulse" /> {/* Added motion-safe variant */}
     </form>
   );
 }

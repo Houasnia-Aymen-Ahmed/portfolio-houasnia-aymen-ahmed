@@ -7,136 +7,121 @@
 @tailwind utilities;
 
 :root {
-  --black-gradient: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
-  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  /* Custom CSS variables can be defined here if needed, but prefer Tailwind theme for consistency */
 }
 
 * {
   scroll-behavior: smooth;
 }
 
-.text-gradient {
-  background: radial-gradient(
-    64.18% 64.18% at 71.16% 35.69%,
-    #def9fa 0.89%,
-    #bef3f5 17.23%,
-    #9dedf0 42.04%,
-    #7de7eb 55.12%,
-    #5ce1e6 71.54%,
-    #33bbcf 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6); /* Slightly more subtle white */
+  transform: scale(0);
+  /* animation will be applied via media query */
+  pointer-events: none; /* Make sure it doesn't interfere with button clicks */
+  z-index: 10; /* Ensure ripple is visible on top of button content if any */
 }
 
-.bg-blue-gradient {
-  background: linear-gradient(
-    157.81deg,
-    #def9fa -43.27%,
-    #bef3f5 -21.24%,
-    #9dedf0 12.19%,
-    #7de7eb 29.82%,
-    #5ce1e6 51.94%,
-    #33bbcf 90.29%
-  );
-}
-
-.bg-black-gradient {
-  background: linear-gradient(
-    144.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
-}
-
-.bg-black-gradient-2 {
-  background: linear-gradient(
-    -168.39deg,
-    #ffffff -278.56%,
-    #6d6d6d -78.47%,
-    #11101d 91.61%
-  );
-}
-
-.bg-gray-gradient {
-  background: linear-gradient(
-    153.47deg,
-    rgba(255, 255, 255, 0) -341.94%,
-    #14101d 95.11%
-  );
-}
-
-.bg-discount-gradient {
-  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
-}
-
-.box-shadow {
-  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
-}
-
-.sidebar {
-  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-
-@-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
+@media (prefers-reduced-motion: no-preference) {
+  .ripple {
+    animation: ripple 600ms linear;
   }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
   }
 }
 
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
+
+/*
+  Removed unused utility classes:
+  - .text-gradient
+  - .bg-blue-gradient
+  - .bg-black-gradient
+  - .bg-black-gradient-2
+  - .bg-gray-gradient
+  - .bg-discount-gradient
+  - .box-shadow
+  - .blue__gradient
+  - .pink__gradient
+  - .white__gradient
+
+  Removed .sidebar and slide-top animation as they seemed unused.
+  Removed .feature-card and .feedback-card styles as they seemed unused.
+*/
+
+/* Interactive Cube Styles */
+:root {
+  /* Make Tailwind colors available as CSS variables for the cube */
+  --color-accent-primary: #38BDF8; /* sky-400 */
+  --color-accent-primary-darker: #0EA5E9; /* sky-500 */
+
+  /* Text colors for cube faces - these might need adjustment based on cube face background */
+  --cube-text-light: #1F2937; /* gray-800 */
+  --cube-text-dark: #E2E8F0; /* slate-200 */
+
+  /* Backgrounds for cube faces - using accent with opacity */
+  --cube-bg-light-face: rgba(56, 189, 248, 0.2);
+  --cube-bg-dark-face: rgba(56, 189, 248, 0.3);
+}
+
+.scene {
+  perspective: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  width: 100%; /* Takes width from .scene parent */
+  height: 100%; /* Takes height from .scene parent */
+  position: relative;
+  animation: cube-spin 20s infinite linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none;
+    transform: rotateX(20deg) rotateY(-30deg); /* Static, interesting angle */
   }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
 }
 
-.feature-card:hover {
-  background: var(--black-gradient);
-  box-shadow: var(--card-shadow);
+.cube__face {
+  position: absolute; /* Ensure faces are positioned within the cube */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  backface-visibility: hidden; /* Optional: hide back of faces if they are one-sided */
+
+  background-color: var(--cube-bg-light-face);
+  border: 1px solid var(--color-accent-primary);
+  color: var(--cube-text-light);
 }
 
-.feedback-container .feedback-card:last-child {
-  margin-right: 0px;
+.dark .cube__face { /* Styles for when dark mode is active on a parent */
+  background-color: var(--cube-bg-dark-face);
+  border-color: var(--color-accent-primary-darker);
+  color: var(--cube-text-dark);
 }
 
-.feedback-card {
-  background: transparent;
-}
+.cube__face--front  { transform: rotateY(  0deg) translateZ(50%); } /* 50% of parent cube's width/height */
+.cube__face--back   { transform: rotateY(180deg) translateZ(50%); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(50%); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(50%); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(50%); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(50%); }
 
-.feedback-card:hover {
-  background: var(--black-gradient);
-}
-
-.blue__gradient {
-  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
-  filter: blur(123px);
-}
-
-.pink__gradient {
-  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
-  filter: blur(900px);
-}
-
-.white__gradient {
-  background: rgba(255, 255, 255, 0.6);
-  filter: blur(750px);
+@keyframes cube-spin {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to   { transform: rotateX(360deg) rotateY(360deg); }
 }
