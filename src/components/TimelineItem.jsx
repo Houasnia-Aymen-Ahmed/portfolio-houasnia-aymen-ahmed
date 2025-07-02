@@ -1,24 +1,23 @@
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React from 'react'; // Removed unused var comment
 
-function TimelineItem({ year, title, duration, details }) {
+const TimelineItem = React.memo(function TimelineItem({ year, title, duration, details }) { // Wrapped with React.memo
    return (
-      <ol className="flex flex-col md:flex-row relative border-l border-stone-200 dark:border-stone-700">
-         <li className="mb-10 ml-4">
-            <div className="absolute w-3 h-3 bg-stone-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-stone-900 dark:bg-stone-700" />
-            <p className="flex flex-wrap gap-4 flex-row items-center justify-start text-xs md:text-sm">
-               <span className="inline-block px-2 py-1 font-semibold text-white dark:text-stone-900 bg-stone-900 dark:bg-white rounded-md">
+      <ol className="flex flex-col md:flex-row relative border-l border-slate-300 dark:border-slate-700">
+         <li className="mb-10 ml-6"> {/* Increased ml for more space from the line */}
+            <div className="absolute w-3 h-3 bg-slate-300 rounded-full mt-1.5 -left-[7px] border border-light-bg dark:border-dark-bg dark:bg-slate-700" /> {/* Adjusted left position for thicker dot */}
+            <div className="flex flex-wrap gap-x-4 gap-y-1 flex-row items-center justify-start text-xs md:text-sm mb-1"> {/* Added mb-1 */}
+               <span className="inline-block px-2 py-1 font-semibold text-light-bg dark:text-dark-bg bg-light-text-primary dark:bg-dark-text-primary rounded-md">
                   {year}
                </span>
-               <h3 className="text-lg font-semibold text-stone-900 dark:text-white">
+               <h3 className="text-lg font-semibold text-light-text-primary dark:text-dark-text-primary">
                   {title}
                </h3>
-               <div className="my-1 text-sm font-normal leading-none text-stone-500 dark:text-stone-400">
+               <div className="my-1 text-sm font-normal leading-none text-light-text-secondary dark:text-dark-text-secondary">
                   {duration}
                </div>
-            </p>
-            <p className="my-2 text-base font-normal text-stone-600 dark:text-stone-500">
+            </div>
+            <p className="my-2 text-base font-normal text-light-text-secondary dark:text-dark-text-secondary leading-relaxed"> {/* Added leading-relaxed */}
                {details}
             </p>
          </li>
