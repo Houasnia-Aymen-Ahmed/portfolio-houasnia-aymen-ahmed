@@ -29,9 +29,9 @@ const Timeline = () => {
         <Title>Timeline</Title>
       </motion.div>
       {timeline.map(item => (
-        <motion.div key={item.id} variants={itemVariant}> {/* Key on motion.div */}
+        <motion.div key={item.title} variants={itemVariant}> {/* Key on motion.div */}
           <TimelineItem
-            // key={item.id} // Key is now on the motion component
+            // key={item.title} // Key is now on the motion component
             year={item.year}
           title={item.title}
           duration={item.duration}

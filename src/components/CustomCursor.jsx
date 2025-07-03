@@ -44,6 +44,7 @@ const CustomCursor = () => {
       height: 16,
       width: 16,
       backgroundColor: 'var(--color-accent-primary)', // Use CSS variable
+      opacity: 1, // Ensure it's visible
       mixBlendMode: 'difference', // Interesting effect against backgrounds
       transition: { type: 'spring', stiffness: 500, damping: 20, mass: 0.1 }
     },
@@ -82,6 +83,7 @@ const CustomCursor = () => {
       className="custom-cursor fixed top-0 left-0 rounded-full pointer-events-none z-[99999]"
       variants={variants}
       animate={cursorVariant}
+      initial={{ backgroundColor: 'var(--color-accent-primary)', opacity: 0 }}
     />
   );
 };

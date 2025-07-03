@@ -24,7 +24,7 @@ const About = () => {
             <div className="flex flex-col sm:flex-row w-full justify-between">
               <div className="flex flex-col">
                 {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (
-                  <div key={item.id} className='flex flex-col p-2'>
+                  <div key={item.title} className='flex flex-col p-2'>
                   <ul>
                     <li>
                       <i><strong>{item.title}:</strong></i>&nbsp;&nbsp;
@@ -36,7 +36,7 @@ const About = () => {
               </div>
               <div className="flex flex-col">
                 {infos.slice(Math.ceil(infos.length / 2)).map((item) => (
-                  <div key={item.id} className='flex flex-col p-2'>
+                  <div key={item.title} className='flex flex-col p-2'>
                   <ul>
                     <li>
                       <i><strong>{item.title}: </strong></i>&nbsp;&nbsp;
