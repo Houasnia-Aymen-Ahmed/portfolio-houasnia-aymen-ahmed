@@ -26,7 +26,7 @@ const lineVariant = {
   }
 };
 
-const dotVariant = {
+const dotVariantAlt = {
   hidden: { scale: 0, opacity: 0 },
   visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: "easeOut", delay: 0.7 } } // Delay dot after line
 };
@@ -87,6 +87,7 @@ const TimelineItem = React.memo(function TimelineItem({ year, title, duration, d
             <p className="my-2 text-base font-normal text-light-text-secondary dark:text-dark-text-secondary leading-relaxed"> {/* Added leading-relaxed */}
                {details}
             </p>
+            </motion.div>
          </li>
       </ol>
    );

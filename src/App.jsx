@@ -96,7 +96,8 @@ const App = () => {
   };
 
   return (
-    <> {/* Using Fragment to wrap CustomCursor and the main layout div */}
+    <>
+      {/* Using Fragment to wrap CustomCursor and the main layout div */}
       <CustomCursor />
       <motion.div
         className='flex font-inter'
@@ -170,7 +171,8 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
+      </motion.div>
+    </>
   );
 }
 

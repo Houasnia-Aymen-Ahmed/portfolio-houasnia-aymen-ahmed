@@ -25,18 +25,18 @@ const Timeline = () => {
   // So each direct motion child here (Title wrapper, and each TimelineItem wrapper) will be staggered.
   return (
     <div id='Timeline' className='pt-20 pb-6 px-6 md:px-12 overflow-hidden'>
-       <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
+      <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
         <Title>Timeline</Title>
       </motion.div>
       {timeline.map(item => (
         <motion.div key={item.title} variants={itemVariant}> {/* Key on motion.div */}
           <TimelineItem
-            // key={item.title} // Key is now on the motion component
             year={item.year}
-          title={item.title}
-          duration={item.duration}
-          details={item.details}
-        />
+            title={item.title}
+            duration={item.duration}
+            details={item.details}
+          />
+        </motion.div>
       ))}
     </div>
 

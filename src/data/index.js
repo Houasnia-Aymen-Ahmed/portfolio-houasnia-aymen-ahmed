@@ -113,31 +113,37 @@ export const socialMedia = [
 
 export const headbarItems = [
   {
+    id: 'headbar-1',
     icon: faHouse,
     title: "Home",
     ref: "#Home"
   },
   {
+    id: 'headbar-2',
     icon: faUser,
     title: "About",
     ref: "#About"
   },
   {
+    id: 'headbar-3',
     icon: faDiagramProject,
     title: "Projects",
     ref: "#Projects"
   },
   {
+    id: 'headbar-4',
     icon: faTimeline,
     title: "Timeline",
     ref: "#Timeline"
   },
   {
+    id: 'headbar-5',
     icon: faFile,
     title: "Resume",
     ref: "#Resume"
   },
   {
+    id: 'headbar-6',
     icon: faEnvelope,
     title: "Contact",
     ref: "#Contact"

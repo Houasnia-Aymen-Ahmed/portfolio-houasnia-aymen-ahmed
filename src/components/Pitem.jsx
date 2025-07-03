@@ -54,7 +54,7 @@ const Pitem = React.memo(({ title, imgUrl, stack, link }) => {
         </p>
       </div>
     </div>
-    </a>
+    </motion.a>
   );
 });
 export default Pitem;
