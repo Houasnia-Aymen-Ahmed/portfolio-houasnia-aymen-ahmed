@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useRef, useState } from 'react'; // Grouped imports
 import Title from './Title';
-import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { createRipple } from '../utils/rippleEffect'; // Import createRipple
+import { createRipple } from '../utils/rippleEffect';
+import { motion } from 'framer-motion'; // Import motion
 
 const Contact = () => {
   const form = useRef();
   const [errorMessage, setErrorMessage] = useState('');
-  const [see, letSee] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // Changed 'see' to 'successMessage' for clarity
+  const [focusedField, setFocusedField] = useState(''); // To track focused field for animated underline
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -32,49 +33,70 @@ const Contact = () => {
       });
   };
   return (
-    <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full space-y-4"> {/* Added space-y-4 for spacing */}
+    <form ref={form} onSubmit={sendEmail} className="flex flex-col w-full space-y-6"> {/* Increased space-y */}
       <Title>Contact</Title>
-      <div>
+
+      {/* Name Field */}
+      <div className="relative">
         <label htmlFor="from_name" className="sr-only">Name</label>
         <input
-          id="from_name"
-          type="text"
-          name="from_name"
-          placeholder="Name"
+          id="from_name" type="text" name="from_name" placeholder="Name"
+          onFocus={() => setFocusedField('from_name')}
+          onBlur={() => setFocusedField('')}
           className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
                      border border-slate-400 dark:border-slate-600
                      text-light-text-primary dark:text-dark-text-primary
-                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
-                     transition-shadow" />
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary/70
+                     transition-shadow peer" /> {/* Added peer for potential label animation later */}
+        <motion.span
+          className="absolute bottom-0 left-0 h-0.5 bg-accent-primary"
+          animate={{ width: focusedField === 'from_name' ? '100%' : '0%' }}
+          transition={{ duration: 0.3, ease: 'circOut' }}
+        />
       </div>
-      <div>
+
+      {/* Email Field */}
+      <div className="relative">
         <label htmlFor="from_email" className="sr-only">Email</label>
         <input
-          id="from_email"
-          type="email"
-          name="from_email"
-          placeholder="Email"
+          id="from_email" type="email" name="from_email" placeholder="Email"
+          onFocus={() => setFocusedField('from_email')}
+          onBlur={() => setFocusedField('')}
           className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
                      border border-slate-400 dark:border-slate-600
                      text-light-text-primary dark:text-dark-text-primary
-                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
-                     transition-shadow" />
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary/70
+                     transition-shadow peer" />
+        <motion.span
+          className="absolute bottom-0 left-0 h-0.5 bg-accent-primary"
+          animate={{ width: focusedField === 'from_email' ? '100%' : '0%' }}
+          transition={{ duration: 0.3, ease: 'circOut' }}
+        />
       </div>
-      {see && <p className="text-sm text-accent-primary">{see}</p>} {/* Styled success message */}
-      {errorMessage && <div className="text-red-500 pb-2 text-sm">{errorMessage}</div>} {/* Styled error message */}
-      <div>
+
+      {/* Success/Error Messages - to be animated */}
+      {successMessage && <p className="text-sm text-green-500 dark:text-green-400">{successMessage}</p>}
+      {errorMessage && <div className="text-sm text-red-500 dark:text-red-400 pb-2">{errorMessage}</div>}
+
+      {/* Message Field */}
+      <div className="relative">
         <label htmlFor="message" className="sr-only">Message</label>
         <textarea
-          id="message"
-          name="message"
-          placeholder="Message"
-          rows="6" // Reduced rows slightly
+          id="message" name="message" placeholder="Message" rows="6"
+          onFocus={() => setFocusedField('message')}
+          onBlur={() => setFocusedField('')}
           className="w-full p-3 bg-light-bg-alt dark:bg-dark-bg-alt
                      border border-slate-400 dark:border-slate-600
                      text-light-text-primary dark:text-dark-text-primary
-                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-accent-primary
-                     transition-shadow resize-none" /> {/* Added resize-none */}
+                     rounded-md focus:outline-none focus:ring-2 focus:ring-accent-primary/70
+                     transition-shadow resize-none peer" />
+        <motion.span
+          className="absolute bottom-0 left-0 h-0.5 bg-accent-primary"
+          animate={{ width: focusedField === 'message' ? '100%' : '0%' }}
+          transition={{ duration: 0.3, ease: 'circOut' }}
+        />
       </div>
+
       <input
         type="submit"
         value="Send me a message"

@@ -55,73 +55,66 @@
   Removed .feature-card and .feedback-card styles as they seemed unused.
 */
 
-/* Interactive Cube Styles */
-:root {
-  /* Make Tailwind colors available as CSS variables for the cube */
-  --color-accent-primary: #38BDF8; /* sky-400 */
-  --color-accent-primary-darker: #0EA5E9; /* sky-500 */
-
-  /* Text colors for cube faces - these might need adjustment based on cube face background */
-  --cube-text-light: #1F2937; /* gray-800 */
-  --cube-text-dark: #E2E8F0; /* slate-200 */
-
-  /* Backgrounds for cube faces - using accent with opacity */
-  --cube-bg-light-face: rgba(56, 189, 248, 0.2);
-  --cube-bg-dark-face: rgba(56, 189, 248, 0.3);
+/* Custom Cursor: Hide default system cursor */
+html, body {
+  cursor: none;
 }
 
-.scene {
-  perspective: 800px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Ensure interactive elements also don't show default cursor if custom one is active */
+a, button, input[type="submit"], input[type="text"], textarea, select {
+  cursor: none;
 }
 
-.cube {
-  transform-style: preserve-3d;
-  width: 100%; /* Takes width from .scene parent */
-  height: 100%; /* Takes height from .scene parent */
-  position: relative;
-  animation: cube-spin 20s infinite linear;
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .cube {
-    animation: none;
-    transform: rotateX(20deg) rotateY(-30deg); /* Static, interesting angle */
+/* Interactive Cube Styles Removed */
+
+/* Aurora Background Effect */
+@keyframes aurora-gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.cube__face {
-  position: absolute; /* Ensure faces are positioned within the cube */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  backface-visibility: hidden; /* Optional: hide back of faces if they are one-sided */
-
-  background-color: var(--cube-bg-light-face);
-  border: 1px solid var(--color-accent-primary);
-  color: var(--cube-text-light);
+/* Specific class for elements that should have the aurora background */
+.aurora-bg {
+  position: relative; /* Needed for pseudo-elements if used, or direct background */
+  overflow: hidden; /* Keep gradients contained */
 }
 
-.dark .cube__face { /* Styles for when dark mode is active on a parent */
-  background-color: var(--cube-bg-dark-face);
-  border-color: var(--color-accent-primary-darker);
-  color: var(--cube-text-dark);
+.aurora-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1; /* Place it behind the content */
+
+  background: linear-gradient(
+    120deg,
+    hsla(197, 94%, 61%, 0.2), /* accent-primary (sky-400) with low opacity */
+    hsla(327, 89%, 65%, 0.2), /* accent-secondary (pink-400) with low opacity */
+    hsla(222, 89%, 65%, 0.2)  /* A complementary blue/purple with low opacity */
+  );
+  background-size: 400% 400%; /* Make gradient large for smooth animation */
+  animation: aurora-gradient-animation 30s ease infinite;
+
+  /* For dark theme, we might want slightly different opacities or colors,
+     but this can be a base. The low opacity should work on both.
+     If more distinction is needed:
+  */
 }
 
-.cube__face--front  { transform: rotateY(  0deg) translateZ(50%); } /* 50% of parent cube's width/height */
-.cube__face--back   { transform: rotateY(180deg) translateZ(50%); }
-.cube__face--right  { transform: rotateY( 90deg) translateZ(50%); }
-.cube__face--left   { transform: rotateY(-90deg) translateZ(50%); }
-.cube__face--top    { transform: rotateX( 90deg) translateZ(50%); }
-.cube__face--bottom { transform: rotateX(-90deg) translateZ(50%); }
-
-@keyframes cube-spin {
-  from { transform: rotateX(0deg) rotateY(0deg); }
-  to   { transform: rotateX(360deg) rotateY(360deg); }
+.dark .aurora-bg::before {
+  background: linear-gradient(
+    120deg,
+    hsla(197, 94%, 61%, 0.3), /* accent-primary (sky-400) slightly more visible */
+    hsla(327, 89%, 65%, 0.3), /* accent-secondary (pink-400) slightly more visible */
+    hsla(222, 89%, 65%, 0.3)
+  );
+  background-size: 400% 400%;
+  animation: aurora-gradient-animation 30s ease infinite;
 }
