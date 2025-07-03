@@ -36,7 +36,8 @@ const Timeline = () => {
           title={item.title}
           duration={item.duration}
           details={item.details}
-        />
+          />
+        </motion.div>
       ))}
     </div>
 
