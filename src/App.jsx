@@ -3,61 +3,70 @@
 import React, { useEffect, useState, useReducer, useRef } from 'react'; // Added useRef
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About } from "./components";
+import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About, CustomCursor } from "./components"; // Added CustomCursor
 import { bgImage } from './assets';
-import useIntersectionObserver from './hooks/useIntersectionObserver'; // Import the hook
+// import useIntersectionObserver from './hooks/useIntersectionObserver'; // No longer needed
 import { createRipple } from './utils/rippleEffect'; // Import createRipple for App.jsx buttons
+import { motion, useReducedMotion } from 'framer-motion'; // Ensure useReducedMotion is imported
 
-// Helper component for scroll animations
-const AnimatedSection = ({ children, animationProps = {}, threshold = 0.1, triggerOnce = true }) => {
-  const [elementRef, isIntersecting] = useIntersectionObserver({ threshold, triggerOnce });
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
+// Helper component for scroll animations using Framer Motion
+const AnimatedSection = ({
+  children,
+  className = "", // Allow passing additional classNames
+  variants = null, // Allow custom variants
+  staggerChildren = 0, // Default no stagger, pass value like 0.1 for stagger
+  threshold = 0.2, // Viewport amount to trigger
+  triggerOnce = true
+}) => {
+  const shouldReduceMotion = useReducedMotion(); // Framer Motion hook
 
-  useEffect(() => {
-    setReduceMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  }, []);
-
-  useEffect(() => {
-    if (isIntersecting && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [isIntersecting, hasAnimated]);
-
-  const defaultAnimation = {
-    initial: "opacity-0 translate-y-10",
-    animate: "opacity-100 translate-y-0",
-    transition: "transition-all duration-700 ease-out",
+  const defaultVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        ...(staggerChildren > 0 && { staggerChildren }) // Apply stagger if value is provided
+      }
+    },
   };
 
-  const currentAnimation = { ...defaultAnimation, ...animationProps };
+  const activeVariants = variants || defaultVariants;
 
-  if (reduceMotion) {
-    return <div ref={elementRef}>{children}</div>; // No animation if prefers-reduced-motion
+  if (shouldReduceMotion) {
+    // Render children directly without motion.div if reduced motion is preferred
+    return <div className={className}>{children}</div>;
   }
 
   return (
-    <div
-      ref={elementRef}
-      className={`${currentAnimation.transition} ${isIntersecting || hasAnimated ? currentAnimation.animate : currentAnimation.initial}`}
+    <motion.div
+      className={className} // Apply any passed className
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: triggerOnce, amount: threshold }}
+      variants={activeVariants}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
-
+// App component starts here, ensuring no duplication from previous merge error
 const App = () => {
   const [theme, setTheme] = useState(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setTheme('dark');
     }
     else {
-      setTheme('dark');
+      setTheme('dark'); // Default to dark if not specified or if system preference is light
     }
   }, []);
+
   const handleThemeSwitch = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
@@ -74,29 +83,54 @@ const App = () => {
     setIsHeaderVisible(!isHeaderVisible);
   };
 
+  const [reducePageLoadMotion, setReducePageLoadMotion] = useState(false);
+  useEffect(() => {
+    setReducePageLoadMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }, []);
+
   const backgroundImageUrl = `url(${bgImage})`;
 
+  const mainVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
-    <div className='flex font-inter'> {/* Moved font-inter here to be default */}
-      {/* Sidebar */}
-      <div className={`z-[9997] top-0 bottom-0 w-[300px] min-h-screen fixed md:fixed md:left-0
-                      bg-light-bg-alt dark:bg-dark-bg-alt
-                      md:block ${isHeaderVisible ? 'left-[-300px]' : 'left-0'}
-                      transition-all ease-in-out duration-500 py-0 px-[15px] overflow-y-auto shadow-lg`}>
+    <> {/* Using Fragment to wrap CustomCursor and the main layout div */}
+      <CustomCursor />
+      <motion.div
+        className='flex font-inter'
+        initial={!reducePageLoadMotion ? "hidden" : false}
+        animate={!reducePageLoadMotion ? "visible" : false}
+        variants={!reducePageLoadMotion ? mainVariants : undefined}
+      >
+        {/* Sidebar */}
+        <motion.div
+          className={`z-[9997] top-0 bottom-0 w-[300px] min-h-screen fixed md:fixed md:left-0
+                        bg-light-bg-alt dark:bg-dark-bg-alt
+                        py-0 px-[15px] overflow-y-auto shadow-lg`} // Removed md:block and positioning classes for left
+          initial={false} // Avoid initial animation based on default state, let animate prop handle it
+          animate={isHeaderVisible || window.innerWidth >= 768 ? "open" : "closed"} // Control based on state and screen width (md breakpoint is 768px by default)
+          variants={{
+            open: { x: 0 },
+            closed: { x: "-100%" }, // Use percentage for full slide out
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }} // Framer Motion transition
+        >
         <Headbar />
-      </div>
+        </motion.div>
 
       {/* Main Content Area */}
       <div className="flex-1 w-full h-full bg-no-repeat bg-auto xl:bg-contain md:ml-[300px]" style={{ backgroundImage: backgroundImageUrl }}>
         {/* Mobile Menu Toggle Button */}
         <button
           type="button"
-          className="fixed p-2 z-[9999] right-20 top-4
+          className="fixed p-2 z-[9999] top-4 right-20
                      bg-accent-secondary hover:bg-accent-secondary-darker text-white
                      text-lg rounded-md w-[50px] h-[50px]
                      items-center justify-center md:hidden flex transition-colors
-                     relative overflow-hidden" // Added for ripple
-          onClick={(e) => { toggleHeader(); createRipple(e); }} // Combined onClick
+                     relative overflow-hidden" // Ensured top-4 right-20
+          onClick={(e) => { toggleHeader(); createRipple(e); }}
           >
           {isHeaderVisible ? <FontAwesomeIcon icon={faBars} /> : <FontAwesomeIcon icon={faClose} />}
         </button>
@@ -104,11 +138,11 @@ const App = () => {
         {/* Theme Switch Button */}
         <button
           type="button"
-          onClick={(e) => { handleThemeSwitch(); createRipple(e); }} // Combined onClick
-          className="fixed p-2 z-[9999] right-5 top-4
+          onClick={(e) => { handleThemeSwitch(); createRipple(e); }}
+          className="fixed p-2 z-[9999] top-4 right-5
                      bg-accent-secondary hover:bg-accent-secondary-darker text-white
                      text-lg rounded-md w-[50px] h-[50px] items-center justify-center flex transition-colors
-                     relative overflow-hidden" > {/* Added for ripple */}
+                     relative overflow-hidden" > {/* Ensured top-4 right-5 */}
           {theme === 'dark' ?
             <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
         </button>
@@ -119,13 +153,13 @@ const App = () => {
           </AnimatedSection>
           {/* Sections Container */}
           <div className="bg-light-bg dark:bg-dark-bg" >
-            <AnimatedSection>
+            <AnimatedSection> {/* About section - will revisit its internal animations */}
               <About />
             </AnimatedSection>
-            <AnimatedSection>
+            <AnimatedSection staggerChildren={0.1}> {/* Stagger Portfolio items */}
               <Portfolio />
             </AnimatedSection>
-            <AnimatedSection>
+            <AnimatedSection staggerChildren={0.1}> {/* Stagger Timeline items */}
               <Timeline />
             </AnimatedSection>
             <AnimatedSection>

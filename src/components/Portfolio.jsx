@@ -6,6 +6,16 @@ import {
   faChevronLeft
 } from "@fortawesome/free-solid-svg-icons";
 import { createRipple } from '../utils/rippleEffect'; // Import createRipple
+import { motion } from 'framer-motion'; // Import motion
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  }
+};
 
 const Portfolio = () => {
   const slideLeft = () => {
@@ -43,9 +53,16 @@ const Portfolio = () => {
         id="Projects"
         className="w-full h-full flex overflow-x-scroll scrollbar-hide whitespace-nowrap scroll-smooth items-stretch pt-10 pb-5 px-2"
       >
-        <div id="Slider" className="flex gap-5 py-2">
+        <div id="Slider" className="flex gap-5 py-2"> {/* This div is part of the scroll container, children will be motion items */}
           {projects.map((project) => (
-            <Pitem id="Pitem" key={project.id} {...project} />
+            <motion.div
+              key={project.id} // Key on the motion component
+              variants={itemVariant}
+              // className="h-full" // Add if Pitem needs to fill height; Pitem itself should handle its dimensions.
+                                  // The items-stretch on parent #Projects div should make these motion.divs stretch.
+            >
+              <Pitem id="Pitem" {...project} />
+            </motion.div>
           ))}
         </div>
       </div>

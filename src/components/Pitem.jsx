@@ -1,21 +1,33 @@
 /* eslint-disable react/prop-types */
-import React from "react"; // Removed unused var comment
+import React from "react";
+import { motion } from "framer-motion"; // Import motion
 
 const Pitem = React.memo(({ title, imgUrl, stack, link }) => {
   return (
-    <a
+    <motion.a // Changed to motion.a
       href={link}
       target="_blank"
-    rel="noopener noreferrer"
-    className="flex flex-col md:min-w-[400px] min-w-[250px] border-2
-               border-slate-300 dark:border-slate-700
-               rounded-lg shadow-lg hover:shadow-2xl
-               hover:border-accent-primary dark:hover:border-accent-primary
-               transform hover:scale-[1.02]
-               transition-all ease-in-out duration-300 overflow-hidden group bg-light-bg-alt dark:bg-dark-bg-alt"
-  >
-    <div className="w-full h-36 md:h-48 overflow-hidden"> {/* Container for image to control its size and overflow if needed */}
-      <img
+      rel="noopener noreferrer"
+      className="flex flex-col md:min-w-[400px] min-w-[250px] border-2
+                 border-slate-300 dark:border-slate-700
+                 rounded-lg shadow-lg
+                 hover:border-accent-primary dark:hover:border-accent-primary
+                 overflow-hidden group bg-light-bg-alt dark:bg-dark-bg-alt
+                 cursor-none" // cursor-none because we have a custom cursor
+      initial={{ scale: 1, rotateX: 0, rotateY: 0 }}
+      whileHover={{
+        scale: 1.03,
+        rotateX: 2, // Subtle tilt
+        rotateY: -2, // Subtle tilt
+        boxShadow: "0px 5px 20px -2px var(--color-accent-primary)", // Accent glow
+        transition: { type: "spring", stiffness: 300, damping: 15 }
+      }}
+      // transition prop on the component itself for smooth exit from hover state
+      transition={{ duration: 0.3, ease: "easeOut" }}
+    >
+      {/* Removed Tailwind transform, hover:shadow-2xl, hover:scale, transition-all as Framer Motion handles this */}
+      <div className="w-full h-36 md:h-48 overflow-hidden">
+        <img
         src={imgUrl}
         alt={title || "Project image"} // Add title to alt text for better accessibility
         loading="lazy" // Added lazy loading
