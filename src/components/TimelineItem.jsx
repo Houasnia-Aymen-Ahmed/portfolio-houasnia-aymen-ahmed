@@ -22,7 +22,7 @@ const TimelineItem = React.memo(function TimelineItem({ year, title, duration, d
             </p>
          </li>
       </ol>
-   )
-}
+   );
+}); // Added closing parenthesis and semicolon for React.memo
 
 export default TimelineItem;

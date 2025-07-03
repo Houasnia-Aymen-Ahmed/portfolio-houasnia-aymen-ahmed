@@ -1,10 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react"; // Removed unused var comment
 
-const Pitem = React.memo(({ title, imgUrl, stack, link }) => (
-  <a
-    href={link}
-    target="_blank"
+const Pitem = React.memo(({ title, imgUrl, stack, link }) => {
+  return (
+    <a
+      href={link}
+      target="_blank"
     rel="noopener noreferrer"
     className="flex flex-col md:min-w-[400px] min-w-[250px] border-2
                border-slate-300 dark:border-slate-700
@@ -41,7 +42,7 @@ const Pitem = React.memo(({ title, imgUrl, stack, link }) => (
         </p>
       </div>
     </div>
-  </a>
-);
-
+    </a>
+  );
+});
 export default Pitem;
