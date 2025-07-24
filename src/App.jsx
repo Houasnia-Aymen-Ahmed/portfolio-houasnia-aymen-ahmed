@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, useReducer, useRef } from 'react'; // Added useRef
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";

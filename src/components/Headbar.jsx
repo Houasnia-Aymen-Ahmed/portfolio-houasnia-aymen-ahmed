@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, {useState} from 'react';
 import { myPic} from '../assets';
 import { socialMedia } from '../data';
@@ -37,7 +36,7 @@ const Headbar = () => {
                            transition-all ease-in duration-300 group">
                 <img
                   className="w-[23px] h-[23px] group-hover:filter group-hover:brightness-0 group-hover:invert transition-all duration-300" // Invert on hover for better contrast with accent-primary
-                  src={social.icon2}
+                  src={theme === 'dark' ? social.icon2 : social.icon}
                   alt={social.id} />
               </a>
             ))}

@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion'; // Import motion
 
@@ -67,7 +66,7 @@ const Intro = () => {
 
         {/* Quote */}
         {/* Also animate the quote */}
-        <motion.i
+        <motion.blockquote
           className='absolute bottom-10 flex flex-col w-[85%] md:w-[60%] lg:w-[50%] px-[1rem] md:px-[2rem] text-[0.75rem] sm:text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary'
           initial={!reduceMotion ? { opacity: 0, y: 20 } : false}
           animate={!reduceMotion ? { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } } : false} // Delay it more
@@ -78,7 +77,7 @@ const Intro = () => {
           <span className='self-end mt-1'> {/* Added mt-1 for slight separation */}
             And once you start it, you better finish it.&quot;
           </span>
-        </motion.i>
+        </motion.blockquote>
       </div>
   )
 }
