@@ -2,17 +2,10 @@
 import React from 'react';
 import Title from './Title';
 import { timeline } from '../data';
-import TimelineItem from './TimelineItem';
+import TimelineNode from './TimelineNode';
 import { motion } from 'framer-motion'; // Import motion
-
-const itemVariant = {
-  hidden: { opacity: 0, x: -50 }, // Slide from left
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
-};
+import { useState, useEffect, useRef } from 'react';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const titleVariant = { // Separate variant for title for a different effect if desired
   hidden: { opacity: 0, y: -20 },
@@ -21,25 +14,56 @@ const titleVariant = { // Separate variant for title for a different effect if d
 
 
 const Timeline = () => {
-  // The parent <AnimatedSection> in App.jsx will have staggerChildren={0.1}
-  // So each direct motion child here (Title wrapper, and each TimelineItem wrapper) will be staggered.
+  const [activeNode, setActiveNode] = useState(0);
+  const nodeRefs = useRef([]);
+
+  const observerCallback = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = parseInt(entry.target.dataset.index, 10);
+        setActiveNode(index);
+      }
+    });
+  };
+
+  const observerOptions = {
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  };
+
+  useIntersectionObserver(observerCallback, observerOptions, nodeRefs);
+
   return (
-    <div id='Timeline' className='pt-20 pb-6 px-6 md:px-12 overflow-hidden'>
-      <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
+<motion.div
+  id='Timeline'
+  className='pt-20 pb-6 px-6 md:px-12 overflow-hidden'
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+>
+       <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
         <Title>Timeline</Title>
       </motion.div>
-      {timeline.map(item => (
-        <motion.div key={item.title} variants={itemVariant}> {/* Key on motion.div */}
-          <TimelineItem
-            year={item.year}
-            title={item.title}
-            duration={item.duration}
-            details={item.details}
-          />
-        </motion.div>
-      ))}
-    </div>
-
+      <div className="flex flex-col">
+        {timeline.map((item, index) => (
+          <div key={item.title} ref={el => nodeRefs.current[index] = el} data-index={index}>
+            <TimelineNode
+              year={item.year}
+              title={item.title}
+              duration={item.duration}
+              details={item.details}
+              isActive={index === activeNode}
+              onClick={() => {
+                nodeRefs.current[index].scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'center'
+                });
+              }}
+            />
+          </div>
+        ))}
+      </div>
+</motion.div>
   )
 }
 

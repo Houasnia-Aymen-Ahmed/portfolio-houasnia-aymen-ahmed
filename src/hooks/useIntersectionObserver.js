@@ -1,49 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-const useIntersectionObserver = (options) => {
-  const [entry, setEntry] = useState(null);
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const elementRef = useRef(null);
-
+const useIntersectionObserver = (callback, options, refs) => {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([firstEntry]) => {
-        setEntry(firstEntry);
-        setIsIntersecting(firstEntry.isIntersecting);
-      },
-      { ...options }
-    );
+    const observer = new IntersectionObserver(callback, options);
+    const currentRefs = refs.current;
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    currentRefs.forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      currentRefs.forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
     };
-  }, [options]); // Re-run effect if options change
-
-  // Re-observe if the element reference changes (though less common for simple cases)
-  useEffect(() => {
-    const currentElement = elementRef.current;
-    if (!currentElement && entry && entry.target) { // If element was unmounted and re-mounted
-        const observer = new IntersectionObserver(
-            ([firstEntry]) => {
-              setEntry(firstEntry);
-              setIsIntersecting(firstEntry.isIntersecting);
-            },
-            { ...options }
-          );
-        observer.observe(entry.target); // Should be currentElement if it exists
-        return () => observer.unobserve(entry.target);
-    }
-  }, [elementRef, entry, options])
-
-
-  return [elementRef, isIntersecting, entry];
+  }, [callback, options, refs]);
 };
 
 export default useIntersectionObserver;

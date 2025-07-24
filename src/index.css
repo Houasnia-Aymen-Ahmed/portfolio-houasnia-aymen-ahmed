@@ -118,19 +118,3 @@ a, button, input[type="submit"], input[type="text"], textarea, select {
   background-size: 400% 400%;
   animation: aurora-gradient-animation 30s ease infinite;
 }
-
-/* Custom Cursor Styles */
-.custom-cursor {
-  pointer-events: none;
-  z-index: 99999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--color-accent-primary, #00bcd4); /* fallback color */
-  opacity: 1;
-  mix-blend-mode: difference;
-  transition: background 0.2s, width 0.2s, height 0.2s, opacity 0.2s;
-}
