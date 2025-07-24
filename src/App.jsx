@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useReducer, useRef } from 'react'; // Added useRef
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About, CustomCursor } from "./components"; // Added CustomCursor
+import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About, CustomCursor, Chatbot } from "./components"; // Added CustomCursor
 import { bgImage } from './assets';
 // import useIntersectionObserver from './hooks/useIntersectionObserver'; // No longer needed
 import { createRipple } from './utils/rippleEffect'; // Import createRipple for App.jsx buttons
@@ -98,6 +98,7 @@ const App = () => {
   return (
     <> {/* Using Fragment to wrap CustomCursor and the main layout div */}
       <CustomCursor />
+<Chatbot handleThemeSwitch={handleThemeSwitch} />
       <motion.div
         className='flex font-inter'
         initial={!reducePageLoadMotion ? "hidden" : false}
