@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
 import Title from './Title'
 import { cvImage } from '../assets';
 import Contact from './Contact';
@@ -13,7 +11,7 @@ const Resume = () => {
                <img src={cvImage} alt="Resume Preview" className="w-full object-cover border-2 rounded-lg border-slate-300 dark:border-slate-700" loading="lazy" />
             </div>
          </div>
-         <div id='Contact' className="flex flex-col w-full md:flex-1 md:self-start md:pt-12 mt-8 md:mt-0"> {/* Adjusted self-alignment and spacing */}
+         <div className="flex flex-col w-full md:flex-1 md:self-start md:pt-12 mt-8 md:mt-0"> {/* Adjusted self-alignment and spacing */}
             <Contact></Contact>
          </div>
       </div>

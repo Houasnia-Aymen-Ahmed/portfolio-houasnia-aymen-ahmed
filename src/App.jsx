@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'; // Added useRef
+import React, { useEffect, useState, useReducer, useRef } from 'react'; // Added useRef
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About, CustomCursor, Chatbot } from "./components"; // Added CustomCursor

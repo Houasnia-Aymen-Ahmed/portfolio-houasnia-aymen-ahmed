@@ -7,11 +7,10 @@ import Headbar from "./Headbar.jsx";
 import About from "./About.jsx";
 import Contact from "./Contact.jsx";
 import Chatbot from "./Chatbot/Chatbot.jsx";
+import CustomCursor from "./CustomCursor.jsx";
 
 
 export {
-    Contact, Resume, Footer, Intro,
-    Portfolio, Timeline, Headbar,
-    About,
-    Chatbot,
+    Contact, Resume, Footer, Intro,Portfolio,
+    Timeline, Headbar, About, Chatbot, CustomCursor
 }

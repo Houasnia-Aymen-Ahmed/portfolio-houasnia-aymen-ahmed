@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
 import Title from './Title';
 import { timeline } from '../data';
 import TimelineNode from './TimelineNode';
@@ -44,26 +42,18 @@ const Timeline = () => {
        <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
         <Title>Timeline</Title>
       </motion.div>
-      <div className="flex flex-col">
-        {timeline.map((item, index) => (
-          <div key={item.title} ref={el => nodeRefs.current[index] = el} data-index={index}>
-            <TimelineNode
-              year={item.year}
-              title={item.title}
-              duration={item.duration}
-              details={item.details}
-              isActive={index === activeNode}
-              onClick={() => {
-                nodeRefs.current[index].scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'center'
-                });
-              }}
-            />
-          </div>
-        ))}
-      </div>
-</motion.div>
+{timeline.map(item => (
+        <motion.div key={item.id} variants={itemVariant}> {/* Key on motion.div */}
+          <TimelineItem
+            // key={item.id} // Key is now on the motion component
+            year={item.year}
+          title={item.title}
+          duration={item.duration}
+          details={item.details}
+          />
+        </motion.div>
+      ))}
+     </motion.div>
   )
 }
 

@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useRef, useState } from 'react'; // Grouped imports
 import Title from './Title';
 import emailjs from '@emailjs/browser';

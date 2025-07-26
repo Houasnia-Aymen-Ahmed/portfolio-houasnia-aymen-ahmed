@@ -1,8 +1,5 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
 import { socialMedia } from '../data';
 
-// eslint-disable-next-line react/prop-types
 const Footer = ({theme}) => {
   return (
     <div className="py-8 text-center border-t border-slate-200 dark:border-slate-800 mt-12"> {/* Added border-t and mt */}
