@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import { myPic } from '../assets';
 import { infos } from '../data';
-import { motion } from 'framer-motion'; // Import motion
 import Title from './Title'
 
 const About = () => {
@@ -23,8 +20,8 @@ const About = () => {
             <p className="italic mt-0 mb-[1rem] text-light-text-secondary dark:text-dark-text-secondary">Programming is life</p>
             <div className="flex flex-col sm:flex-row w-full justify-between">
               <div className="flex flex-col">
-                {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (
-                  <div key={item.title} className='flex flex-col p-2'>
+                 {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (
+                  <div key={item.id} className='flex flex-col p-2'>
                   <ul>
                     <li>
                       <i><strong>{item.title}:</strong></i>&nbsp;&nbsp;
@@ -36,7 +33,7 @@ const About = () => {
               </div>
               <div className="flex flex-col">
                 {infos.slice(Math.ceil(infos.length / 2)).map((item) => (
-                  <div key={item.title} className='flex flex-col p-2'>
+                  <div key={item.id} className='flex flex-col p-2'>
                   <ul>
                     <li>
                       <i><strong>{item.title}: </strong></i>&nbsp;&nbsp;

@@ -72,9 +72,5 @@ const Portfolio = () => {
   );
 };
 
-Portfolio.propTypes = {
-  direction: PropTypes.string,
-  onClick: PropTypes.func,
-};
 
 export default Portfolio;

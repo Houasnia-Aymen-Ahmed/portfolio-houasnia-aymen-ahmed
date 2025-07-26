@@ -4,7 +4,23 @@ import { motion } from 'framer-motion';
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const cursorVariant = 'default'; // 'default', 'hoverLink', 'hoverText' etc.
+  const [cursorVariant, setCursorVariant] = useState('default');
+  useEffect(() => {
+    const handleMouseEnterLink = () => setCursorVariant('hoverLink');
+    const handleMouseLeaveLink = () => setCursorVariant('default');
+
+    document.querySelectorAll('a, button, input[type="submit"]').forEach(el => {
+      el.addEventListener('mouseenter', handleMouseEnterLink);
+      el.addEventListener('mouseleave', handleMouseLeaveLink);
+    });
+
+    return () => {
+      document.querySelectorAll('a, button, input[type="submit"]').forEach(el => {
+        el.removeEventListener('mouseenter', handleMouseEnterLink);
+        el.removeEventListener('mouseleave', handleMouseLeaveLink);
+      });
+    };
+  }, []);
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -17,48 +33,29 @@ const CustomCursor = () => {
     };
   }, []);
 
-  // This effect would handle changes for cursorVariant based on what is hovered.
-  // For simplicity in this step, we'll just have a default cursor.
-  // More advanced: use event delegation or context to change variant.
-  // useEffect(() => {
-  //   const handleMouseEnterLink = () => setCursorVariant('hoverLink');
-  //   const handleMouseLeaveLink = () => setCursorVariant('default');
-  //
-  //   document.querySelectorAll('a, button, input[type="submit"]').forEach(el => {
-  //     el.addEventListener('mouseenter', handleMouseEnterLink);
-  //     el.addEventListener('mouseleave', handleMouseLeaveLink);
-  //   });
-  //
-  //   return () => {
-  //     document.querySelectorAll('a, button, input[type="submit"]').forEach(el => {
-  //       el.removeEventListener('mouseenter', handleMouseEnterLink);
-  //       el.removeEventListener('mouseleave', handleMouseLeaveLink);
-  //     });
-  //   };
-  // }, []);
+  // ...existing code...
 
 
   const variants = {
     default: {
-      x: mousePosition.x - 8, // Adjust to center the dot
+      x: mousePosition.x - 8,
       y: mousePosition.y - 8,
       height: 16,
       width: 16,
-      backgroundColor: 'var(--color-accent-primary)', // Use CSS variable
-      opacity: 1, // Ensure it's visible
-      mixBlendMode: 'difference', // Interesting effect against backgrounds
+      backgroundColor: 'var(--color-accent-primary)',
+      opacity: 1,
+      mixBlendMode: 'difference',
       transition: { type: 'spring', stiffness: 500, damping: 20, mass: 0.1 }
     },
-    // Example variant for link hover
-    // hoverLink: {
-    //   x: mousePosition.x - 16,
-    //   y: mousePosition.y - 16,
-    //   height: 32,
-    //   width: 32,
-    //   backgroundColor: 'var(--color-accent-secondary)',
-    //   mixBlendMode: 'difference',
-    //   transition: { type: 'spring', stiffness: 400, damping: 15 }
-    // }
+    hoverLink: {
+      x: mousePosition.x - 16,
+      y: mousePosition.y - 16,
+      height: 32,
+      width: 32,
+      backgroundColor: 'var(--color-accent-secondary)',
+      mixBlendMode: 'difference',
+      transition: { type: 'spring', stiffness: 400, damping: 15 }
+    }
   };
 
   // Hide default cursor using global CSS (in index.css)
