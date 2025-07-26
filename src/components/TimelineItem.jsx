@@ -2,21 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
 
-const lineAndDotVariants = {
-  hidden: { pathLength: 0, opacity: 0 }, // For SVG pathLength, or scaleY for pseudo-elements
-  visible: {
-    pathLength: 1, // For SVG pathLength
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } // Delay slightly after item appears
-  }
-};
-
-const dotVariant = { // Separate for dot if needed, or combine
-  hidden: { scale: 0, opacity: 0 },
-  visible: { scale: 1, opacity: 1, transition: { duration: 0.4, ease: "easeOut", delay: 0.5 } } // Delay dot after line
-};
-
-
 const lineVariant = {
   hidden: { scaleY: 0, opacity: 0 },
   visible: {

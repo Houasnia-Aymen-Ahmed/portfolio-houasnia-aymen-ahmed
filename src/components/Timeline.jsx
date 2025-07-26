@@ -1,28 +1,43 @@
 import Title from "./Title";
 import { timeline } from "../data";
-import TimelineItem from "./TimelineItem";
-import { motion } from "framer-motion"; // Import motion
-
-const itemVariant = {
-  hidden: { opacity: 0, x: -50 }, // Slide from left
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+import { motion } from "framer-motion";
+import { useState, useRef, useCallback } from "react";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const titleVariant = {
-  // Separate variant for title for a different effect if desired
   hidden: { opacity: 0, y: -20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 const Timeline = () => {
-  // The parent <AnimatedSection> in App.jsx will have staggerChildren={0.1}
-  // So each direct motion child here (Title wrapper, and each TimelineItem wrapper) will be staggered.
+  const [activeNode, setActiveNode] = useState(0);
+  const nodeRefs = useRef([]);
+
+  const observerCallback = useCallback((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      } else {
+        entry.target.classList.remove("in-view");
+      }
+    });
+  }, []);
+
+  const observerOptions = {
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
+  };
+
+  useIntersectionObserver(observerCallback, observerOptions, nodeRefs);
+
   return (
-    <div id="Timeline" className="pt-20 pb-6 px-6 md:px-12 overflow-hidden">
+    <motion.div
+      id="Timeline"
+      className="pt-20 pb-6 px-6 md:px-12 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <motion.div
         variants={titleVariant}
         initial="hidden"
@@ -33,10 +48,11 @@ const Timeline = () => {
         {/* Ensure title also animates */}
         <Title>Timeline</Title>
       </motion.div>
-          {timeline.map(item => (
-            <motion.div key={item.id} variants={itemVariant}> {/* Key on motion.div */}
+      {timeline.map((item) => (
+        <motion.div key={item.id} variants={itemVariant}>
+          {" "}
+          {/* Key on motion.div */}
           <TimelineItem
-            // key={item.id} // Key is now on the motion component
             year={item.year}
             title={item.title}
             duration={item.duration}
@@ -44,8 +60,7 @@ const Timeline = () => {
           />
         </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
-
 export default Timeline;

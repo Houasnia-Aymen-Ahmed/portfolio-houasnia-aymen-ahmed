@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { createRipple } from '../utils/rippleEffect'; // Import createRipple
 import { motion } from 'framer-motion'; // Import motion
+import PropTypes from 'prop-types';
 
 const itemVariant = {
   hidden: { opacity: 0, y: 30 },
@@ -70,5 +71,6 @@ const Portfolio = () => {
     </div>
   );
 };
+
 
 export default Portfolio;
