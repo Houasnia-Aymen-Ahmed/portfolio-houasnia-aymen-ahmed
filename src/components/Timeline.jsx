@@ -1,4 +1,5 @@
 import Title from "./Title";
+import TimelineItem from "./TimelineItem";
 import { timeline } from "../data";
 import { motion } from "framer-motion";
 import { useState, useRef, useCallback } from "react";
@@ -6,6 +7,11 @@ import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const titleVariant = {
   hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const itemVariant = {
+  hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
