@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
 import { myPic } from '../assets';
 import { infos } from '../data';
-import { motion } from 'framer-motion'; // Import motion
 import Title from './Title'
 
 const About = () => {

@@ -26,8 +26,8 @@ const Timeline = () => {
        <motion.div variants={titleVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}> {/* Ensure title also animates */}
         <Title>Timeline</Title>
       </motion.div>
-      {timeline.map(item => (
-        <motion.div key={item.id} variants={itemVariant}> {/* Key on motion.div */}
+          {timeline.map(item => (
+            <motion.div key={item.id} variants={itemVariant}> {/* Key on motion.div */}
           <TimelineItem
             // key={item.id} // Key is now on the motion component
             year={item.year}
