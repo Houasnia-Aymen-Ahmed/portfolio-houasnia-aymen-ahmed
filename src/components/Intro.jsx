@@ -78,7 +78,7 @@ const Intro = () => {
           <span className='self-end mt-1'> {/* Added mt-1 for slight separation */}
             And once you start it, you better finish it.&quot;
           </span>
-        </i>
+        </motion.i>
       </div>
   )
 }

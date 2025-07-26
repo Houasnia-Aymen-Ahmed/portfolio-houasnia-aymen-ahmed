@@ -4,7 +4,7 @@ import Title from './Title';
 import { timeline } from '../data';
 import TimelineNode from './TimelineNode';
 import { motion } from 'framer-motion'; // Import motion
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const titleVariant = { // Separate variant for title for a different effect if desired

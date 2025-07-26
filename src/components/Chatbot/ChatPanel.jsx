@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 const ChatPanel = ({ isOpen, onClose, handleThemeSwitch }) => {
   const [messages, setMessages] = useState([]);
@@ -112,6 +114,12 @@ const ChatPanel = ({ isOpen, onClose, handleThemeSwitch }) => {
       )}
     </AnimatePresence>
   );
+};
+
+ChatPanel.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  handleThemeSwitch: PropTypes.func.isRequired,
 };
 
 export default ChatPanel;

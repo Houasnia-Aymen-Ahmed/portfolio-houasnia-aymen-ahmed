@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'; // Import motion
 const Contact = () => {
   const form = useRef();
   const [errorMessage, setErrorMessage] = useState('');
-  const [successMessage, setSuccessMessage] = useState(''); // Changed 'see' to 'successMessage' for clarity
+  const [successMessage, setSuccessMessage] = useState('');
   const [focusedField, setFocusedField] = useState(''); // To track focused field for animated underline
   const sendEmail = (e) => {
     e.preventDefault();
@@ -25,11 +25,17 @@ const Contact = () => {
     }
     emailjs.sendForm('service_cz2ne8l', 'template_28c7cn3', form.current, 'UV6yG0DyW440M-Jte')
       .then((result) => {
-        letSee(result.text)
         console.log(result.text);
+        setSuccessMessage('Message sent successfully!');
+        setTimeout(() => {
+          setSuccessMessage('');
+        }, 5000);
       }, (error) => {
-        letSee(error.text)
         console.log(error.text);
+        setErrorMessage('Failed to send message. Please try again later.');
+        setTimeout(() => {
+          setErrorMessage('');
+        }, 5000);
       });
   };
   return (

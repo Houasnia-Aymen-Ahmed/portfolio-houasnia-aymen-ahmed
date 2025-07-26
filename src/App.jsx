@@ -1,6 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState, useReducer, useRef } from 'react'; // Added useRef
+import { useEffect, useState } from 'react'; // Added useRef
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Resume, Footer, Portfolio, Intro, Timeline, Headbar, About, CustomCursor, Chatbot } from "./components"; // Added CustomCursor
@@ -8,6 +6,7 @@ import { bgImage } from './assets';
 // import useIntersectionObserver from './hooks/useIntersectionObserver'; // No longer needed
 import { createRipple } from './utils/rippleEffect'; // Import createRipple for App.jsx buttons
 import { motion, useReducedMotion } from 'framer-motion'; // Ensure useReducedMotion is imported
+import PropTypes from 'prop-types';
 
 // Helper component for scroll animations using Framer Motion
 const AnimatedSection = ({
@@ -51,6 +50,15 @@ const AnimatedSection = ({
       {children}
     </motion.div>
   );
+};
+
+AnimatedSection.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  variants: PropTypes.object,
+  staggerChildren: PropTypes.number,
+  threshold: PropTypes.number,
+  triggerOnce: PropTypes.bool,
 };
 
 // App component starts here, ensuring no duplication from previous merge error
@@ -171,7 +179,8 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
+    </>
   );
 }
 

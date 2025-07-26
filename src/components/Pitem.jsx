@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import motion
 
-const Pitem = React.memo(({ title, imgUrl, stack, link }) => {
+const Pitem = React.memo(function Pitem({ title, imgUrl, stack, link }) {
   return (
     <motion.a // Changed to motion.a
       href={link}
@@ -54,7 +54,7 @@ const Pitem = React.memo(({ title, imgUrl, stack, link }) => {
         </p>
       </div>
     </div>
-    </a>
+    </motion.a>
   );
 });
 export default Pitem;

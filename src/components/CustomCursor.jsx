@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState('default'); // 'default', 'hoverLink', 'hoverText' etc.
+  const cursorVariant = 'default'; // 'default', 'hoverLink', 'hoverText' etc.
 
   useEffect(() => {
     const mouseMove = (e) => {

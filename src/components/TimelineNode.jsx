@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import PropTypes from 'prop-types';
 
 const TimelineNode = ({ year, title, duration, details, isActive, onClick }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -44,6 +46,15 @@ const TimelineNode = ({ year, title, duration, details, isActive, onClick }) => 
       </div>
     </div>
   );
+};
+
+TimelineNode.propTypes = {
+  year: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  duration: PropTypes.string.isRequired,
+  details: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default TimelineNode;
