@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  /* Custom CSS variables can be defined here if needed, but prefer Tailwind theme for consistency */
+body {
+  overflow-x: hidden;
 }
 
 * {
@@ -37,7 +36,6 @@
   }
 }
 
-
 /*
   Removed unused utility classes:
   - .text-gradient
@@ -56,15 +54,20 @@
 */
 
 /* Custom Cursor: Hide default system cursor */
-html, body {
+html,
+body {
   cursor: none;
 }
 
 /* Ensure interactive elements also don't show default cursor if custom one is active */
-a, button, input[type="submit"], input[type="text"], textarea, select {
+a,
+button,
+input[type="submit"],
+input[type="text"],
+textarea,
+select {
   cursor: none;
 }
-
 
 /* Interactive Cube Styles Removed */
 
@@ -88,16 +91,20 @@ a, button, input[type="submit"], input[type="text"], textarea, select {
 }
 
 .aurora-bg::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: -1; /* Place it behind the content */
 
   background: linear-gradient(
     120deg,
-    hsla(197, 94%, 61%, 0.2), /* accent-primary (sky-400) with low opacity */
-    hsla(327, 89%, 65%, 0.2), /* accent-secondary (pink-400) with low opacity */
-    hsla(222, 89%, 65%, 0.2)  /* A complementary blue/purple with low opacity */
+    hsla(197, 94%, 61%, 0.2),
+    /* accent-primary (sky-400) with low opacity */ hsla(327, 89%, 65%, 0.2),
+    /* accent-secondary (pink-400) with low opacity */ hsla(222, 89%, 65%, 0.2)
+      /* A complementary blue/purple with low opacity */
   );
   background-size: 400% 400%; /* Make gradient large for smooth animation */
   animation: aurora-gradient-animation 30s ease infinite;
@@ -111,9 +118,11 @@ a, button, input[type="submit"], input[type="text"], textarea, select {
 .dark .aurora-bg::before {
   background: linear-gradient(
     120deg,
-    hsla(197, 94%, 61%, 0.3), /* accent-primary (sky-400) slightly more visible */
-    hsla(327, 89%, 65%, 0.3), /* accent-secondary (pink-400) slightly more visible */
-    hsla(222, 89%, 65%, 0.3)
+    hsla(197, 94%, 61%, 0.3),
+    /* accent-primary (sky-400) slightly more visible */
+      hsla(327, 89%, 65%, 0.3),
+    /* accent-secondary (pink-400) slightly more visible */
+      hsla(222, 89%, 65%, 0.3)
   );
   background-size: 400% 400%;
   animation: aurora-gradient-animation 30s ease infinite;

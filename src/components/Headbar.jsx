@@ -1,10 +1,19 @@
-import React, {useState} from 'react';
 import { myPic} from '../assets';
 import { socialMedia } from '../data';
 import { headbarItems } from '../data';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from 'react';
 
 const Headbar = () => {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    setTheme(mq.matches ? 'dark' : 'light');
+    const handler = (e) => setTheme(e.matches ? 'dark' : 'light');
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   return (
     <header id='Headbar'>
@@ -35,7 +44,7 @@ const Headbar = () => {
                            inline-flex items-center rounded-full
                            transition-all ease-in duration-300 group">
                 <img
-                  className="w-[23px] h-[23px] group-hover:filter group-hover:brightness-0 group-hover:invert transition-all duration-300" // Invert on hover for better contrast with accent-primary
+                  className="w-[23px] h-[23px] group-hover:filter group-hover:brightness-0 group-hover:invert transition-all duration-300"
                   src={theme === 'dark' ? social.icon2 : social.icon}
                   alt={social.id} />
               </a>
