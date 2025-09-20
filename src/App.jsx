@@ -168,7 +168,7 @@ const App = () => {
               handleThemeSwitch();
               createRipple(e);
             }}
-            className="fixed p-2 z-[9999] top-4 bg-accent-secondary hover:bg-accent-secondary-darker text-white text-lg rounded-md w-[50px] h-[50px] items-center justify-center flex transition-colors overflow-hidden"
+            className="fixed p-2 z-[9999] top-4 right-5 bg-accent-secondary hover:bg-accent-secondary-darker text-white text-lg rounded-md w-[50px] h-[50px] items-center justify-center flex transition-colors overflow-hidden"
           >
             {theme === "dark" ? (
               <FontAwesomeIcon icon={faSun} />
