@@ -37,17 +37,25 @@ const CustomCursor = () => {
 
 
   const variants = {
+    initial: {
+      opacity: 0,
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+      height: 16,
+      width: 16,
+    },
     default: {
+      opacity: 1,
       x: mousePosition.x - 8,
       y: mousePosition.y - 8,
       height: 16,
       width: 16,
       backgroundColor: 'var(--color-accent-primary)',
-      opacity: 1,
       mixBlendMode: 'difference',
       transition: { type: 'spring', stiffness: 500, damping: 20, mass: 0.1 }
     },
     hoverLink: {
+      opacity: 1,
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
       height: 32,
@@ -81,7 +89,7 @@ const CustomCursor = () => {
       className="custom-cursor fixed top-0 left-0 rounded-full pointer-events-none z-[99999]"
       variants={variants}
       animate={cursorVariant}
-      initial={{ backgroundColor: 'var(--color-accent-primary)', opacity: 0 }}
+      initial="initial"
     />
   );
 };
