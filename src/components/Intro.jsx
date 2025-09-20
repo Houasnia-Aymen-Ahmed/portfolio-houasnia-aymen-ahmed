@@ -79,9 +79,8 @@ const Intro = () => {
         className="flex flex-col w-[85%] md:w-[60%] lg:w-[50%] mx-auto text-[0.75rem] sm:text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         animate={
-          !reduceMotion
-            ? { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
-            : false
+          reduceMotion ? false : { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
+
         }
       >
         <span className="self-start">
