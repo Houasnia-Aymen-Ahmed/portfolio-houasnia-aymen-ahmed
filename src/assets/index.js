@@ -23,6 +23,7 @@ import guessord from "./guessord.jpeg";
 import attendify from "./attendify.jpg";
 import unity_app from "./unity_app.jfif";
 import chessProject from "./chessProject.png";
+import PersonalPicture from "./Personal_Picture.jpg";
 
 export {
   terminal_web,
@@ -49,5 +50,6 @@ export {
   attendify,
   guessord,
   unity_app,
-  chessProject
+  chessProject,
+  PersonalPicture,
 };
