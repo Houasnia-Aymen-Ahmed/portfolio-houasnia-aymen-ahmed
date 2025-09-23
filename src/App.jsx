@@ -16,6 +16,8 @@ import {
   About,
   CustomCursor,
   Chatbot,
+  Certificates,
+  Skills,
 } from "./components";
 import { bgImage } from "./assets";
 import { createRipple } from "./utils/rippleEffect";
@@ -190,6 +192,12 @@ const App = () => {
               </AnimatedSection>
               <AnimatedSection staggerChildren={0.1}>
                 <Timeline />
+              </AnimatedSection>
+              <AnimatedSection>
+                <Skills />
+              </AnimatedSection>
+              <AnimatedSection>
+                <Certificates />
               </AnimatedSection>
               <AnimatedSection>
                 <Resume />

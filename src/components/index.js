@@ -8,9 +8,22 @@ import About from "./About.jsx";
 import Contact from "./Contact.jsx";
 import Chatbot from "./Chatbot/Chatbot.jsx";
 import CustomCursor from "./CustomCursor.jsx";
-
+import Certificates from "./Certificates.jsx";
+import Skills from "./Skills.jsx";
+import ProjectImage from "./ProjectImage.jsx";
 
 export {
-    Contact, Resume, Footer, Intro,Portfolio,
-    Timeline, Headbar, About, Chatbot, CustomCursor
-}
+  Contact,
+  Resume,
+  Footer,
+  Intro,
+  Portfolio,
+  Timeline,
+  Headbar,
+  About,
+  Chatbot,
+  CustomCursor,
+  Certificates,
+  Skills,
+  ProjectImage,
+};

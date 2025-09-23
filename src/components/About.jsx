@@ -28,10 +28,10 @@ const About = () => {
             <h3 className="font-bold text-[26px] font-raleway text-accent-primary dark:text-accent-primary">
               {" "}
               {/* Use Raleway and accent color */}
-              Developer / Engineer
+              Odoo Developer / Engineer
             </h3>
             <p className="italic mt-0 mb-[1rem] text-light-text-secondary dark:text-dark-text-secondary">
-              Programming is life
+              Industrial Network Engineering & Artificial Intelligence Engineer
             </p>
             <div className="flex flex-col sm:flex-row w-full justify-between">
               <div className="flex flex-col">
@@ -69,28 +69,27 @@ const About = () => {
           <div className="flex">
             <div className="flex flex-col">
               <p className="text-base max-w-6xl mb-3 font-bold">
-                Student at the{" "}
+                Graduated from{" "}
                 <span>
                   &quot;Higher National School of Renewable Energies,
                   Environment & Sustainable Development (HNS-RE2SD)&quot;
                 </span>
-                & Last year(3/3) in Specialty{" "}
+                {" "}with Engineering Diploma in{" "}
                 <span>
                   {" "}
                   &quot;Industrial Network Engineering & Artificial
                   Intelligence&quot;
                 </span>
-                .
+                {" "}with Excellent mention (19/20).
               </p>
               <p>
-                Lives at the moment in <span>Batna / Algeria</span>. I can say
-                that i am quite skilled in multiple fields including{" "}
-                <span>Unity ARCore</span> Mobile Applications Development,{" "}
-                <span>Django</span> Back-end Development
+                Currently working as <span>Odoo Developer & Consultant</span> at ITComp in Algiers, Algeria. 
+                Previously worked as <span>System Administrator & IT Engineer</span> at L'OURS FOR OIL & GAS SERVICES 
+                and as <span>IONIC Framework Developer</span> at Originova.
               </p>
               <p>
-                <span>Programming</span> is my power point, though{" "}
-                <span>Graphic Design</span> is my weak one
+                Skilled in <span>Programming</span>, <span>Team-working</span>, and always open to learn new things. 
+                The phrase that describes me is: <span>&quot;If you do a job do it perfectly.. and once you start it you better finish it&quot;</span>
               </p>
             </div>
           </div>

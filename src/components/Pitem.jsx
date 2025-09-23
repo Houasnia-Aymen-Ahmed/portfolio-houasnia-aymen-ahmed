@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { motion } from "framer-motion"; // Import motion
+import ProjectImage from "./ProjectImage";
 
 const Pitem = React.memo(function Pitem({ title, imgUrl, stack, link }) {
   return (
@@ -27,12 +28,11 @@ const Pitem = React.memo(function Pitem({ title, imgUrl, stack, link }) {
     >
       {/* Removed Tailwind transform, hover:shadow-2xl, hover:scale, transition-all as Framer Motion handles this */}
       <div className="w-full h-36 md:h-48 overflow-hidden">
-        <img
-        src={imgUrl}
-        alt={title || "Project image"} // Add title to alt text for better accessibility
-        loading="lazy" // Added lazy loading
-        className="w-full h-full object-cover cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-105" // Slight zoom on image itself
-      />
+        <ProjectImage
+          imgUrl={imgUrl}
+          title={title}
+          className="w-full h-full cursor-pointer transition-transform duration-300 ease-in-out group-hover:scale-105"
+        />
     </div>
     <div className="w-full p-4 flex flex-col flex-grow"> {/* flex-grow to make this part expand */}
       <h3 className="text-lg md:text-xl text-light-text-primary dark:text-dark-text-primary mb-2 md:mb-3 font-semibold">
