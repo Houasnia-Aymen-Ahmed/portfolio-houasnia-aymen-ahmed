@@ -1,4 +1,4 @@
-import { myPic } from "../assets";
+import { PersonalPicture } from "../assets";
 import { infos } from "../data";
 import Title from "./Title";
 
@@ -17,7 +17,7 @@ const About = () => {
           {/* Added flex centering for image if it's smaller than container */}
           <img
             className="h-auto max-w-full rounded-lg shadow-lg"
-            src={myPic}
+            src={PersonalPicture}
             alt="Houasnia Aymen Ahmed"
             loading="lazy"
           />{" "}

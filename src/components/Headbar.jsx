@@ -1,4 +1,4 @@
-import { myPic} from '../assets';
+import { PersonalPicture} from '../assets';
 import { socialMedia } from '../data';
 import { headbarItems } from '../data';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +21,7 @@ const Headbar = () => {
         <div className="text-center"> {/* Centering container */}
           <a href="#" className="no-underline">
             <img
-              src={myPic}
+              src={PersonalPicture}
               alt="Houasnia Aymen Ahmed"
               loading="lazy" // Added lazy loading
               className="my-[15px] mx-auto block w-[120px] h-[120px] object-cover border-[6px] border-solid

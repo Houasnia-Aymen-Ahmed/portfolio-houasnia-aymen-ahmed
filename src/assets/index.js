@@ -10,7 +10,7 @@ import githubD from "./githubD.svg";
 import linkedinD from "./linkedinD.svg";
 import sunImg from "./sunImg.svg";
 import moonImg from "./moonImg.svg";
-import myPic from "./myPic.jpg";
+import PersonalPicture from "./PersonalPicture.jpg";
 import about from "./about.svg";
 import home from "./home.svg";
 import contact from "./contact.svg";
@@ -23,7 +23,6 @@ import guessord from "./guessord.jpeg";
 import attendify from "./attendify.jpg";
 import unity_app from "./unity_app.jfif";
 import chessProject from "./chessProject.png";
-import PersonalPicture from "./Personal_Picture.jpg";
 
 export {
   terminal_web,
@@ -38,7 +37,7 @@ export {
   facebookD,
   githubD,
   linkedinD,
-  myPic,
+  PersonalPicture,
   about,
   contact,
   home,
@@ -51,5 +50,4 @@ export {
   guessord,
   unity_app,
   chessProject,
-  PersonalPicture,
 };
