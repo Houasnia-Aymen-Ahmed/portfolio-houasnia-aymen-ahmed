@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form Message</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="email-container">
+      <h2 class="email-header">New Contact Form Message</h2>
+
+      <div class="email-info">
+        <p><strong>Name:</strong> {{name}}</p>
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Date:</strong> {{date}}</p>
+      </div>
+
+      <div class="email-message">
+        <h3>Message:</h3>
+        <p>{{message}}</p>
+      </div>
+
+      <div class="email-tip">
+        <p>
+          💡 <strong>Reply directly to this email</strong> to respond to
+          {{name}}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

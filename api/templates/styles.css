@@ -1,0 +1,68 @@
+/* Email Template Styles - Vercel Compatible */
+.email-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f9fafb;
+}
+
+.email-header {
+  color: #0ea5e9;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 2px solid #0ea5e9;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.email-info {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.email-info p {
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.email-info strong {
+  color: #111827;
+}
+
+.email-message {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.email-message h3 {
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.email-message p {
+  color: #4b5563;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.email-tip {
+  margin-top: 20px;
+  padding: 16px;
+  background: #dbeafe;
+  border-radius: 8px;
+  border-left: 4px solid #0ea5e9;
+}
+
+.email-tip p {
+  margin: 0;
+  color: #1976d2;
+  font-size: 14px;
+}
