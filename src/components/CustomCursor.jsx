@@ -1,6 +1,6 @@
 // === code cursor ===
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,16 +18,20 @@ const CustomCursor = () => {
     };
 
     // Add event listeners for text and div elements
-    document.querySelectorAll('div, p, h1, h2, h3, h4, h5, h6, span, a, button').forEach(el => {
-      el.addEventListener('mouseenter', handleMouseEnter);
-      el.addEventListener('mouseleave', handleMouseLeave);
-    });
+    document
+      .querySelectorAll("div, p, h1, h2, h3, h4, h5, h6, span, a, button")
+      .forEach((el) => {
+        el.addEventListener("mouseenter", handleMouseEnter);
+        el.addEventListener("mouseleave", handleMouseLeave);
+      });
 
     return () => {
-      document.querySelectorAll('div, p, h1, h2, h3, h4, h5, h6, span, a, button').forEach(el => {
-        el.removeEventListener('mouseenter', handleMouseEnter);
-        el.removeEventListener('mouseleave', handleMouseLeave);
-      });
+      document
+        .querySelectorAll("div, p, h1, h2, h3, h4, h5, h6, span, a, button")
+        .forEach((el) => {
+          el.removeEventListener("mouseenter", handleMouseEnter);
+          el.removeEventListener("mouseleave", handleMouseLeave);
+        });
     };
   }, []);
 
@@ -36,9 +40,9 @@ const CustomCursor = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener("mousemove", mouseMove);
     return () => {
-      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener("mousemove", mouseMove);
     };
   }, []);
 
@@ -48,7 +52,9 @@ const CustomCursor = () => {
 
   useEffect(() => {
     setIsClient(true);
-    setReduceMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    setReduceMotion(
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
   }, []);
 
   // If not client-side or user prefers reduced motion, show default cursor
@@ -68,36 +74,42 @@ const CustomCursor = () => {
     if (!isHovering || !hoveredElement) {
       return 20;
     }
-    
+
     // Check if element is a div and count nesting level
-    if (hoveredElement.tagName === 'DIV') {
+    if (hoveredElement.tagName === "DIV") {
       let parent = hoveredElement.parentElement;
       let nestingLevel = 0;
-      
+
       // Count div parents
       while (parent) {
-        if (parent.tagName === 'DIV') {
+        if (parent.tagName === "DIV") {
           nestingLevel++;
         }
         parent = parent.parentElement;
       }
-      
-      console.log('Div nesting level:', nestingLevel, 'Element:', hoveredElement);
-      
+
+      console.log(
+        "Div nesting level:",
+        nestingLevel,
+        "Element:",
+        hoveredElement
+      );
+
       // Only take width if it's 3rd level div or deeper (nestingLevel >= 2)
       if (nestingLevel >= 2) {
         const rect = hoveredElement.getBoundingClientRect();
         const elementWidth = rect.width;
-        console.log('Element width:', elementWidth);
+        console.log("Element width:", elementWidth);
         return Math.min(Math.max(elementWidth, 20), 200);
       }
     }
-    
+
     return 20; // Default small width
   };
 
   const cursorWidth = getCursorWidth();
-  const shouldExpand = isHovering && hoveredElement?.tagName === 'DIV' && cursorWidth > 20;
+  const shouldExpand =
+    isHovering && hoveredElement?.tagName === "DIV" && cursorWidth > 20;
 
   return (
     <motion.div
@@ -107,33 +119,33 @@ const CustomCursor = () => {
         y: mousePosition.y - 8,
         width: cursorWidth,
         height: 16,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
       animate={{
         width: cursorWidth,
         x: mousePosition.x - cursorWidth / 2,
         y: mousePosition.y - 8,
         opacity: isHovering ? 1 : 0.8,
-        scale: isHovering ? 1.05 : 1
+        scale: isHovering ? 1.05 : 1,
       }}
       transition={{
-        type: 'spring',
+        type: "spring",
         stiffness: 400,
-        damping: 25
+        damping: 25,
       }}
     >
       <motion.span
         className="text-[#0ea5e9] font-mono text-sm font-bold"
         animate={{
-          opacity: isHovering ? 1 : 0.7
+          opacity: isHovering ? 1 : 0.7,
         }}
         transition={{
-          duration: 0.2
+          duration: 0.2,
         }}
       >
-        {shouldExpand ? '<             />' : '<>'}
+        {shouldExpand ? "<             />" : "<>"}
       </motion.span>
     </motion.div>
   );

@@ -46,14 +46,14 @@ const Intro = () => {
               variants={textRevealVariant}
               custom={0} // Stagger index
             >
-              I&apos;m a
+              I&apos;m
               <motion.span
                 className="font-bold text-accent-primary dark:text-accent-primary"
                 // variants={textRevealVariant} // Can animate this span separately if needed
                 // custom={1}
               >
                 <Typewriter
-                  words={[" Developer", "n Engineer", " Freelancer"]}
+                  words={[" a Developer", " an Engineer", " a Freelancer"]}
                   loop={0}
                   cursor
                   cursorStyle="|"
@@ -79,8 +79,9 @@ const Intro = () => {
         className="flex flex-col w-[85%] md:w-[60%] lg:w-[50%] mx-auto text-[0.75rem] sm:text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         animate={
-          reduceMotion ? false : { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
-
+          reduceMotion
+            ? false
+            : { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
         }
       >
         <span className="self-start">
