@@ -34,7 +34,7 @@ export const projects = [
       "Flutter",
       "Firebase",
       "Django",
-      "YOLOV8",
+      "YOLOv8",
       "PostgreSQL",
       "ThreeJS",
       "React",
@@ -243,7 +243,7 @@ export const timeline = [
     title: "Graduated",
     duration: "5 years of study",
     details:
-      "Graduated with Engineering Diploma of 'Industrial Computer Science Engineer'specialized in 'Industrial Networking Engineering & Artificial Intelligence', and a Master's Diploma in automation, from Higher National School of Renewable Energies, Environment & Sustainable Development. \n Final project: 'AI-Guided Inflatable Neck Collar simulation' with Excellent mention (19/20). And",
+      "Graduated with Engineering Diploma of 'Industrial Computer Science Engineer' specialized in 'Industrial Networking Engineering & Artificial Intelligence', and a Master's Diploma in automation, from Higher National School of Renewable Energies, Environment & Sustainable Development. \n Final project: 'AI-Guided Inflatable Neck Collar simulation'. This achievement marked the culmination of 5 years of intensive study and practical application of cutting-edge technologies in AI and industrial systems.",
   },
   {
     id: 3,

@@ -11,7 +11,7 @@ const Certificates = () => {
       <div className="flex flex-col w-full">
         <Title>Certificates & Achievements</Title>
       </div>
-      
+
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {certificates.map((cert, index) => (
           <motion.div
@@ -20,7 +20,7 @@ const Certificates = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="bg-light-bg-alt dark:bg-dark-bg-alt p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-light-border dark:border-dark-border"
+            className="bg-light-bg-alt dark:bg-dark-bg-alt p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-200 dark:border-slate-700"
           >
             <div className="flex flex-col h-full">
               <h3 className="text-lg font-semibold text-accent-primary dark:text-accent-primary mb-2">

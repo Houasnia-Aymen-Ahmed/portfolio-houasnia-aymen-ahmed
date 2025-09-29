@@ -7,7 +7,6 @@ import Headbar from "./Headbar.jsx";
 import About from "./About.jsx";
 import Contact from "./Contact.jsx";
 import Chatbot from "./Chatbot/Chatbot.jsx";
-import CustomCursor from "./CustomCursor.jsx";
 import Certificates from "./Certificates.jsx";
 import Skills from "./Skills.jsx";
 import ProjectImage from "./ProjectImage.jsx";
@@ -22,7 +21,6 @@ export {
   Headbar,
   About,
   Chatbot,
-  CustomCursor,
   Certificates,
   Skills,
   ProjectImage,

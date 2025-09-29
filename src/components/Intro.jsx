@@ -37,8 +37,8 @@ const Intro = () => {
           {/* Text content */}
           <motion.div
             className="flex flex-col items-center text-center"
-            initial={!reduceMotion ? "hidden" : false}
-            animate={!reduceMotion ? "visible" : false}
+            initial={reduceMotion ? false : "hidden"}
+            animate={reduceMotion ? false : "visible"}
             variants={{ visible: { transition: { staggerChildren: 0.3 } } }} // Stagger children animation
           >
             <motion.p
