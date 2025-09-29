@@ -37,8 +37,8 @@ const Intro = () => {
           {/* Text content */}
           <motion.div
             className="flex flex-col items-center text-center"
-            initial={!reduceMotion ? "hidden" : false}
-            animate={!reduceMotion ? "visible" : false}
+            initial={reduceMotion ? false : "hidden"}
+            animate={reduceMotion ? false : "visible"}
             variants={{ visible: { transition: { staggerChildren: 0.3 } } }} // Stagger children animation
           >
             <motion.p
@@ -79,8 +79,9 @@ const Intro = () => {
         className="flex flex-col w-[85%] md:w-[60%] lg:w-[50%] mx-auto text-[0.75rem] sm:text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         animate={
-          reduceMotion ? false : { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
-
+          reduceMotion
+            ? false
+            : { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.7 } }
         }
       >
         <span className="self-start">

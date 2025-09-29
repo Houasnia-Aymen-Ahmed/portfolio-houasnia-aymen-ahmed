@@ -53,21 +53,7 @@ body {
   Removed .feature-card and .feedback-card styles as they seemed unused.
 */
 
-/* Custom Cursor: Hide default system cursor */
-html,
-body {
-  cursor: none;
-}
-
-/* Ensure interactive elements also don't show default cursor if custom one is active */
-a,
-button,
-input[type="submit"],
-input[type="text"],
-textarea,
-select {
-  cursor: none;
-}
+/* Default cursor is now visible - only glow effect follows it */
 
 /* Custom cursor styles */
 .custom-cursor {
