@@ -17,8 +17,10 @@ module.exports = {
         // Text colors
         "light-text-primary": "#1F2937", // Tailwind gray-800
         "light-text-secondary": "#4B5563", // Tailwind gray-600
+        "light-text-tertiary": "#6B7280", // Tailwind gray-500
         "dark-text-primary": "#E2E8F0", // Tailwind slate-200
-        "dark-text-secondary": "#94A3B8", // Tailwind slate-400
+        "dark-text-secondary": "#94A3B8", // Tailwind slate-400 - much lighter for better contrast
+        "dark-text-tertiary": "#64748B", // Tailwind slate-500 - lighter for better contrast
 
         // Accent colors - WCAG AA compliant
         "accent-primary": "#0369A1", // Tailwind sky-700 (WCAG AA compliant on light backgrounds)
@@ -27,6 +29,22 @@ module.exports = {
         "accent-secondary": "#BE185D", // Tailwind pink-700 (WCAG AA compliant on light backgrounds)
         "accent-secondary-darker": "#9D174D", // Tailwind pink-800 (for hover states)
         "accent-secondary-light": "#F574AD", // Original pink (for dark backgrounds)
+
+        // Social media button colors
+        "social-bg-light": "#334150", // Light gray for light theme
+        "social-bg-dark": "#4B5563", // Medium gray for dark theme
+        "social-hover": "#0369A1", // Accent primary for hover
+
+        // Navigation colors
+        "nav-bg-light": "#F3F4F6", // Light gray for light theme
+        "nav-bg-dark": "#374151", // Dark gray for dark theme
+        "nav-hover": "#0369A1", // Accent primary for hover
+
+        // UI element colors
+        "ui-bg-light": "#E5E7EB", // Light gray for UI elements
+        "ui-bg-dark": "#374151", // Dark gray for UI elements
+        "ui-border-light": "#D1D5DB", // Light border color
+        "ui-border-dark": "#4B5563", // Dark border color
 
         // Old custom colors now removed:
         // dimWhite: "rgba(255, 255, 255, 0.7)",

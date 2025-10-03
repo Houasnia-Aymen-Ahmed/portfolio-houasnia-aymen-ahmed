@@ -200,11 +200,10 @@ const Contact = () => {
         className={`relative overflow-hidden text-center inline-block px-8 py-3 w-max text-base font-medium rounded-md
                    text-white focus:outline-none focus:ring-2 focus:ring-accent-primary focus:ring-offset-2
                    dark:focus:ring-offset-dark-bg transition-all duration-300 ease-in-out
-                   motion-safe:hover:animate-pulse ${
-                     isSubmitting
-                       ? "bg-gray-400 cursor-not-allowed"
-                       : "bg-accent-primary hover:bg-accent-primary-darker cursor-pointer"
-                   }`}
+                   motion-safe:hover:animate-pulse ${isSubmitting
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-accent-primary hover:bg-accent-primary-darker cursor-pointer"
+          }`}
       >
         {isSubmitting ? "Sending..." : "Send me a message"}
       </button>

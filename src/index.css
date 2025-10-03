@@ -5,8 +5,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
 body {
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  scroll-padding-top: 0;
+  position: relative;
+}
+
+/* Prevent layout shifts that could cause scrolling */
+#root {
+  min-height: 100vh;
+  position: relative;
 }
 
 * {

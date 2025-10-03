@@ -25,6 +25,7 @@ import {
   faCertificate,
   faCode,
 } from "@fortawesome/free-solid-svg-icons";
+import { calculateAge } from "../utils/dateUtils";
 export const projects = [
   {
     id: "project-1",
@@ -281,31 +282,30 @@ export const timeline = [
   },
 ];
 
+// Personal information data
+const birthday = "11 April 2001";
+
 export const infos = [
   {
     title: "Birthday",
-    content: "11 April 2001",
+    content: birthday,
   },
 
   {
-    title: "Website",
-    content:
-      "https://houasnia-aymen-ahmed.github.io/portfolio-houasnia-aymen-ahmed/",
+    title: "Portfolio",
+    content: "https://portfolio-houasnia-aymen-ahmed.vercel.app/",
   },
-
   {
     title: "Phone",
     content: "+213 673 407 157",
   },
-
   {
     title: "City",
-    content: "Batna, Algeria",
+    content: "Batna | Algiers, Algeria",
   },
-
   {
     title: "Age",
-    content: "23",
+    content: calculateAge(birthday), // Pass birthday value to function
   },
   {
     title: "Degree",
@@ -317,7 +317,7 @@ export const infos = [
   },
   {
     title: "Freelance",
-    content: "Available",
+    content: "Part-Time (Available)",
   },
 ];
 

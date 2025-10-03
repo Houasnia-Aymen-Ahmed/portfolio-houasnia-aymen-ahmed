@@ -78,7 +78,7 @@ const ProjectImage = ({ imgUrl, title, className = "" }) => {
 
       {/* Error State */}
       {imageError && (
-        <div className="absolute inset-0 bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+        <div className="absolute inset-0 bg-ui-bg-light dark:bg-ui-bg-dark rounded-lg flex items-center justify-center">
           <div className="text-slate-500 dark:text-slate-400 text-sm">Failed to load image</div>
         </div>
       )}

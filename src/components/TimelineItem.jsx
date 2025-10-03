@@ -47,7 +47,7 @@ const TimelineItem = React.memo(function TimelineItem({
         {" "}
         {/* Added pl-4 to give space for line and dot */}
         {/* Static background line segment (track) - this will be behind the animated line */}
-        <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-slate-300 dark:bg-slate-700" />
+        <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-ui-border-light dark:bg-ui-border-dark" />
         {/* Animated line segment */}
         <motion.div
           className="absolute top-0 bottom-0 left-0 w-[2px] bg-accent-primary"

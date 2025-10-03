@@ -12,7 +12,7 @@ const About = () => {
         <Title>About</Title>
       </div>
       <div className=" w-full flex flex-wrap md:flex-row md:gap-8 md:mx-0 my-[1.5rem]  ">
-        <div className=" md:w-[35%] flex items-center justify-center">
+        <div className=" md:w-[35%] flex items-start justify-center">
           {" "}
           {/* Added flex centering for image if it's smaller than container */}
           <img
@@ -34,8 +34,8 @@ const About = () => {
               Industrial Network Engineering & Artificial Intelligence Engineer
             </p>
             <div className="flex flex-col sm:flex-row w-full justify-between">
-              <div className="flex flex-col">
-                {infos.slice(0, Math.ceil(infos.length / 2)).map((item) => (
+              <div className="flex flex-col w-full sm:w-1/2">
+                {infos.slice(0, 4).map((item) => (
                   <div key={item.title} className="flex flex-col p-2">
                     <ul>
                       <li>
@@ -49,8 +49,8 @@ const About = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col">
-                {infos.slice(Math.ceil(infos.length / 2)).map((item) => (
+              <div className="flex flex-col w-full sm:w-1/2">
+                {infos.slice(4).map((item) => (
                   <div key={item.title} className="flex flex-col p-2">
                     <ul>
                       <li>
@@ -66,39 +66,40 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex">
-            <div className="flex flex-col">
-              <p className="text-base max-w-6xl mb-3 font-bold">
-                Graduated from{" "}
-                <span>
-                  &quot;Higher National School of Renewable Energies,
-                  Environment & Sustainable Development (HNS-RE2SD)&quot;
-                </span>{" "}
-                with Engineering Diploma in{" "}
-                <span>
-                  {" "}
-                  &quot;Industrial Network Engineering & Artificial
-                  Intelligence&quot;
-                </span>{" "}
-                with Excellent mention (19/20).
-              </p>
-              <p>
-                Currently working as <span>Odoo Developer & Consultant</span> at
-                ITComp in Algiers, Algeria. Previously worked as{" "}
-                <span>System Administrator & IT Engineer</span> at L'OURS FOR
-                OIL & GAS SERVICES and as <span>IONIC Framework Developer</span>{" "}
-                at Originova.
-              </p>
-              <p>
-                Skilled in <span>Programming</span>, <span>Team-working</span>,
-                and always open to learn new things. The phrase that describes
-                me is:{" "}
-                <span>
-                  &quot;If you do a job do it perfectly.. and once you start it
-                  you better finish it&quot;
-                </span>
-              </p>
-            </div>
+
+        </div>
+        <div className="flex">
+          <div className="flex flex-col">
+            <p className="text-base max-w-6xl mb-3 font-bold">
+              Graduated from{" "}
+              <span>
+                &quot;Higher National School of Renewable Energies,
+                Environment & Sustainable Development (HNS-RE2SD)&quot;
+              </span>{" "}
+              with Engineering Diploma in{" "}
+              <span>
+                {" "}
+                &quot;Industrial Network Engineering & Artificial
+                Intelligence&quot;
+              </span>{" "}
+              with Excellent mention (19/20).
+            </p>
+            <p>
+              Currently working as <span>Odoo Developer & Consultant</span> at
+              ITComp in Algiers, Algeria. Previously worked as{" "}
+              <span>System Administrator & IT Engineer</span> at L'OURS FOR
+              OIL & GAS SERVICES and as <span>IONIC Framework Developer</span>{" "}
+              at Originova.
+            </p>
+            <p>
+              Skilled in <span>Programming</span>, <span>Team-working</span>,
+              and always open to learn new things. The phrase that describes
+              me is:{" "}
+              <span>
+                &quot;If you do a job do it perfectly.. and once you start it
+                you better finish it&quot;
+              </span>
+            </p>
           </div>
         </div>
       </div>

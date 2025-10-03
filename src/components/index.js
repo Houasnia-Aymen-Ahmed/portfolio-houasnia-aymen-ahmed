@@ -11,6 +11,12 @@ import Certificates from "./Certificates.jsx";
 import Skills from "./Skills.jsx";
 import ProjectImage from "./ProjectImage.jsx";
 import ErrorBoundary from "./ErrorBoundary.jsx";
+import SocialMediaButtons from "./SocialMediaButton.jsx";
+import AnimatedSection from "./AnimatedSection.jsx";
+import BackgroundPattern from "./BackgroundPattern.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
+import MobileMenuButton from "./MobileMenuButton.jsx";
+import CursorEffect from "./CursorEffect.jsx";
 
 export {
   Contact,
@@ -26,4 +32,10 @@ export {
   Skills,
   ProjectImage,
   ErrorBoundary,
+  SocialMediaButtons,
+  AnimatedSection,
+  BackgroundPattern,
+  ThemeToggle,
+  MobileMenuButton,
+  CursorEffect,
 };
