@@ -41,7 +41,7 @@ export const projects = [
     ],
     link: "https://github.com/Houasnia-Aymen-Ahmed/Vertarelax-app",
     description:
-      "Final project with Excellent mention (19/20) - AI-guided simulation for neck collar treatment",
+      "Final project featuring an innovative AI-powered medical simulation system. Combines computer vision with YOLOv8 for real-time posture detection, 3D visualization using Three.js, and a comprehensive Flutter mobile app with Firebase backend. Designed to assist healthcare professionals in neck collar treatment planning and patient education.",
   },
   {
     id: "project-2",
@@ -49,7 +49,8 @@ export const projects = [
     imgUrl: webdev,
     stack: ["Flutter", "Dart", "Firebase", "Firestore", "Cloud_messaging"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/Gift-Application",
-    description: "Mobile gift sharing application with Firebase integration",
+    description:
+      "A comprehensive mobile gift-sharing platform built with Flutter and Firebase. Features real-time gift tracking. and push notifications. Implements secure user authentication, cloud storage for gift images",
   },
   {
     id: "project-3",
@@ -57,7 +58,8 @@ export const projects = [
     imgUrl: project2,
     stack: ["Vite", "React JS", "Tailwind Css", "Django", "PostgreSQL"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/WiSetFi-Website",
-    description: "Company website with full-stack implementation",
+    description:
+      "Modern corporate website built with React and Django. Features responsive design, dynamic content management, user authentication, and a robust PostgreSQL database. Includes admin dashboard, contact forms, service showcases, and SEO optimization. Delivers fast loading times with Vite build system and beautiful UI with Tailwind CSS.",
   },
   {
     id: "project-4",
@@ -65,7 +67,8 @@ export const projects = [
     imgUrl: project1,
     stack: ["Vite", "React JS", "Tailwind Css"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/portfolio-houasnia-aymen-ahmed",
-    description: "Personal portfolio showcasing projects and skills",
+    description:
+      "Professional portfolio website showcasing technical skills and projects. Built with React and Vite for optimal performance, featuring responsive design, dark/light theme toggle, interactive animations with Framer Motion, and a modern UI with Tailwind CSS. Includes contact form integration and smooth scrolling navigation.",
   },
   {
     id: "project-5",
@@ -73,7 +76,8 @@ export const projects = [
     imgUrl: guessord,
     stack: ["Vite", "Vue3", "Tailwind Css", "Django", "PostgreSQL", "AI"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/Guessord-Contexto-Clone",
-    description: "Word guessing game with AI integration",
+    description:
+      "Innovative word-guessing game inspired by Contexto, built with Vue 3 and AI integration. Features intelligent word similarity algorithms, progressive difficulty levels, and a sleek modern interface. Implements advanced AI for contextual word relationships and provides engaging gameplay with social features.",
   },
   {
     id: "project-6",
@@ -81,7 +85,8 @@ export const projects = [
     imgUrl: attendify,
     stack: ["Flutter", "Dart", "Firebase", "Firestore", "Cloud_messaging"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/Attendify-App",
-    description: "Attendance tracking mobile application",
+    description:
+      "Smart attendance tracking application for educational institutions. Features QR code scanning, GPS location verification, real-time attendance reports, and automated notifications. Built with Flutter for cross-platform compatibility, integrated with Firebase for cloud storage and real-time synchronization. Includes admin dashboard and student analytics.",
   },
   {
     id: "project-7",
@@ -89,7 +94,8 @@ export const projects = [
     imgUrl: chessProject,
     stack: ["Vite", "React", "TailwindCSS", "TypeScript"],
     link: "https://github.com/Houasnia-Aymen-Ahmed/ChessClone",
-    description: "Online chess game clone with modern UI",
+    description:
+      "Chess platform inspired by Chess.com. Built with React and TypeScript for type safety, featuring real-time gameplay, move validation, and a modern responsive UI. Implements chess engine logic, drag-and-drop piece movement, and comprehensive game state management with beautiful animations.",
   },
   {
     id: "project-8",
@@ -97,7 +103,8 @@ export const projects = [
     imgUrl: "<Qwikly />",
     stack: ["IONIC", "Vue", "Vuetify", "JavaScript"],
     link: "#",
-    description: "Cross-platform mobile app for Android & iOS",
+    description:
+      "Cross-platform productivity app built with Ionic and Vue.js. Features task management, project planning, team collaboration, and deadline tracking. Implements Material Design with Vuetify components, offline synchronization, and native mobile features. Designed for seamless productivity across Android and iOS platforms.",
   },
   {
     id: "project-9",
@@ -105,7 +112,8 @@ export const projects = [
     imgUrl: unity_app,
     stack: ["Unity", "AR Core", "Vuforia"],
     link: "#",
-    description: "Augmented Reality application for data monitoring",
+    description:
+      "Advanced Augmented Reality application for real-time data visualization and monitoring. Built with Unity and AR Core, featuring 3D data overlays, interactive AR markers with Vuforia, and immersive data analysis tools. Enables users to visualize complex datasets in 3D space through AR technology for enhanced data comprehension.",
   },
   {
     id: "project-10",
@@ -114,7 +122,7 @@ export const projects = [
     stack: ["PyTorch", "YOLO", "Python"],
     link: "#",
     description:
-      "Face detection, Voice recognition, and Waste detection projects",
+      "Comprehensive AI/ML project collection featuring advanced computer vision and machine learning applications. Includes real-time face detection using YOLO, voice recognition systems, intelligent waste classification for environmental monitoring, and custom neural network implementations. Built with PyTorch for scalable deep learning solutions.",
   },
   {
     id: "project-11",
@@ -122,7 +130,8 @@ export const projects = [
     imgUrl: "<Library />",
     stack: ["Java", "Swing", "MySQL"],
     link: "#",
-    description: "Desktop application for library management",
+    description:
+      "Comprehensive desktop library management system built with Java Swing and MySQL. Features book cataloging, member management, loan tracking, fine calculation, and detailed reporting. Implements secure user authentication, data validation, and intuitive GUI design for efficient library operations and administrative tasks.",
   },
   {
     id: "project-12",
@@ -130,7 +139,8 @@ export const projects = [
     imgUrl: "<TicTacToe />",
     stack: ["Python"],
     link: "#",
-    description: "Classic puzzle games implemented in Python",
+    description:
+      "Classic puzzle games collection featuring Tic-Tac-Toe and Sudoku implementations in Python. multiple difficulty levels, game statistics tracking, and intuitive command-line interface. Demonstrates algorithmic problem-solving, game logic implementation, and user experience design principles.",
   },
 ];
 

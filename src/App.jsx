@@ -17,6 +17,7 @@ import {
   Chatbot,
   Certificates,
   Skills,
+  ErrorBoundary,
 } from "./components";
 import { createRipple } from "./utils/rippleEffect";
 import { motion, useReducedMotion } from "framer-motion";
@@ -159,7 +160,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <ErrorBoundary>
       {/* Blurred glow effect that follows default cursor */}
       <div
         ref={followerRef}
@@ -407,7 +408,7 @@ const App = () => {
           </div>
         </div>
       </motion.div>
-    </>
+    </ErrorBoundary>
   );
 };
 

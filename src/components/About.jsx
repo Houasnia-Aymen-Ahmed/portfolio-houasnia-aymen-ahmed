@@ -25,7 +25,7 @@ const About = () => {
         </div>
         <div className="flex-1 flex flex-col justify-between  ">
           <div className="flex flex-col items-start ">
-            <h3 className="font-bold text-[26px] font-raleway text-accent-primary dark:text-accent-primary">
+            <h3 className="text-h3 font-poppins font-semibold text-accent-primary dark:text-accent-primary-light">
               {" "}
               {/* Use Raleway and accent color */}
               Odoo Developer / Engineer
@@ -73,23 +73,30 @@ const About = () => {
                 <span>
                   &quot;Higher National School of Renewable Energies,
                   Environment & Sustainable Development (HNS-RE2SD)&quot;
-                </span>
-                {" "}with Engineering Diploma in{" "}
+                </span>{" "}
+                with Engineering Diploma in{" "}
                 <span>
                   {" "}
                   &quot;Industrial Network Engineering & Artificial
                   Intelligence&quot;
+                </span>{" "}
+                with Excellent mention (19/20).
+              </p>
+              <p>
+                Currently working as <span>Odoo Developer & Consultant</span> at
+                ITComp in Algiers, Algeria. Previously worked as{" "}
+                <span>System Administrator & IT Engineer</span> at L'OURS FOR
+                OIL & GAS SERVICES and as <span>IONIC Framework Developer</span>{" "}
+                at Originova.
+              </p>
+              <p>
+                Skilled in <span>Programming</span>, <span>Team-working</span>,
+                and always open to learn new things. The phrase that describes
+                me is:{" "}
+                <span>
+                  &quot;If you do a job do it perfectly.. and once you start it
+                  you better finish it&quot;
                 </span>
-                {" "}with Excellent mention (19/20).
-              </p>
-              <p>
-                Currently working as <span>Odoo Developer & Consultant</span> at ITComp in Algiers, Algeria. 
-                Previously worked as <span>System Administrator & IT Engineer</span> at L'OURS FOR OIL & GAS SERVICES 
-                and as <span>IONIC Framework Developer</span> at Originova.
-              </p>
-              <p>
-                Skilled in <span>Programming</span>, <span>Team-working</span>, and always open to learn new things. 
-                The phrase that describes me is: <span>&quot;If you do a job do it perfectly.. and once you start it you better finish it&quot;</span>
               </p>
             </div>
           </div>

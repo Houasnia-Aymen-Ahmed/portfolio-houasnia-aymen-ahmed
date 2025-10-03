@@ -42,7 +42,7 @@ const Intro = () => {
             variants={{ visible: { transition: { staggerChildren: 0.3 } } }} // Stagger children animation
           >
             <motion.p
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl mb-3 font-medium"
+              className="text-display sm:text-display-sm md:text-display lg:text-display mb-3 font-poppins"
               variants={textRevealVariant}
               custom={0} // Stagger index
             >
@@ -64,7 +64,7 @@ const Intro = () => {
               </motion.span>
             </motion.p>
             <motion.p
-              className="text-lg md:text-xl text-light-text-secondary dark:text-dark-text-secondary max-w-md mt-4"
+              className="text-body-lg md:text-h5 text-light-text-secondary dark:text-dark-text-secondary max-w-md mt-4 font-inter"
               variants={textRevealVariant}
               custom={1} // Stagger index, appears after "I'm a"
             >
@@ -76,7 +76,7 @@ const Intro = () => {
       </div>
 
       <motion.blockquote
-        className="flex flex-col w-[85%] md:w-[60%] lg:w-[50%] mx-auto text-[0.75rem] sm:text-sm md:text-base text-light-text-secondary dark:text-dark-text-secondary"
+        className="flex flex-col w-[85%] md:w-[60%] lg:w-[50%] mx-auto text-caption sm:text-body-sm md:text-body text-light-text-secondary dark:text-dark-text-secondary font-inter"
         initial={reduceMotion ? false : { opacity: 0, y: 20 }}
         animate={
           reduceMotion

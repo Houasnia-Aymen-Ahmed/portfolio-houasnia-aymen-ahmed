@@ -10,6 +10,7 @@ import Chatbot from "./Chatbot/Chatbot.jsx";
 import Certificates from "./Certificates.jsx";
 import Skills from "./Skills.jsx";
 import ProjectImage from "./ProjectImage.jsx";
+import ErrorBoundary from "./ErrorBoundary.jsx";
 
 export {
   Contact,
@@ -24,4 +25,5 @@ export {
   Certificates,
   Skills,
   ProjectImage,
+  ErrorBoundary,
 };

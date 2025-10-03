@@ -20,11 +20,13 @@ module.exports = {
         "dark-text-primary": "#E2E8F0", // Tailwind slate-200
         "dark-text-secondary": "#94A3B8", // Tailwind slate-400
 
-        // Accent colors
-        "accent-primary": "#38BDF8", // Tailwind sky-400 (a modern, friendly blue)
-        "accent-primary-darker": "#0EA5E9", // Tailwind sky-500 (for hover states)
-        "accent-secondary": "#F574AD", // The existing pink, can be used for specific CTAs
-        "accent-secondary-darker": "#EC4899", // Tailwind pink-500
+        // Accent colors - WCAG AA compliant
+        "accent-primary": "#0369A1", // Tailwind sky-700 (WCAG AA compliant on light backgrounds)
+        "accent-primary-darker": "#075985", // Tailwind sky-800 (for hover states)
+        "accent-primary-light": "#38BDF8", // Tailwind sky-400 (for dark backgrounds)
+        "accent-secondary": "#BE185D", // Tailwind pink-700 (WCAG AA compliant on light backgrounds)
+        "accent-secondary-darker": "#9D174D", // Tailwind pink-800 (for hover states)
+        "accent-secondary-light": "#F574AD", // Original pink (for dark backgrounds)
 
         // Old custom colors now removed:
         // dimWhite: "rgba(255, 255, 255, 0.7)",
@@ -35,6 +37,86 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"], // Good for headings
         inter: ["Inter", "sans-serif"], // Excellent for UI text, ensure "Inter" not "inter"
         raleway: ["Raleway", "sans-serif"], // Alternative for headings or body
+      },
+      fontSize: {
+        // Typography Scale - Consistent sizing system
+        display: [
+          "4.5rem",
+          { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+        ], // 72px - Hero headings
+        "display-sm": [
+          "3.5rem",
+          { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+        ], // 56px - Large headings
+        h1: [
+          "2.5rem",
+          { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" },
+        ], // 40px - Main headings
+        h2: [
+          "2rem",
+          { lineHeight: "1.3", letterSpacing: "-0.01em", fontWeight: "600" },
+        ], // 32px - Section headings
+        h3: [
+          "1.5rem",
+          { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+        ], // 24px - Subsection headings
+        h4: [
+          "1.25rem",
+          { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+        ], // 20px - Card headings
+        h5: [
+          "1.125rem",
+          { lineHeight: "1.5", letterSpacing: "0", fontWeight: "600" },
+        ], // 18px - Small headings
+        h6: [
+          "1rem",
+          { lineHeight: "1.5", letterSpacing: "0", fontWeight: "600" },
+        ], // 16px - Micro headings
+        "body-lg": [
+          "1.125rem",
+          { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+        ], // 18px - Large body text
+        body: [
+          "1rem",
+          { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+        ], // 16px - Default body text
+        "body-sm": [
+          "0.875rem",
+          { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+        ], // 14px - Small body text
+        caption: [
+          "0.75rem",
+          { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "400" },
+        ], // 12px - Captions, labels
+        overline: [
+          "0.75rem",
+          {
+            lineHeight: "1.4",
+            letterSpacing: "0.1em",
+            fontWeight: "600",
+            textTransform: "uppercase",
+          },
+        ], // 12px - Overlines
+      },
+      spacing: {
+        // Custom spacing scale for consistent design
+        xs: "0.25rem", // 4px
+        sm: "0.5rem", // 8px
+        md: "0.75rem", // 12px
+        lg: "1rem", // 16px
+        xl: "1.5rem", // 24px
+        "2xl": "2rem", // 32px
+        "3xl": "3rem", // 48px
+        "4xl": "4rem", // 64px
+        "5xl": "6rem", // 96px
+        "6xl": "8rem", // 128px
+
+        // Component-specific spacing
+        section: "5rem", // 80px - Section spacing
+        card: "1.5rem", // 24px - Card padding
+        button: "0.75rem", // 12px - Button padding
+        input: "0.75rem", // 12px - Input padding
+        nav: "1rem", // 16px - Navigation spacing
       },
       filter: {
         invert: "invert(1)", // This seems unused, can be removed if not needed
