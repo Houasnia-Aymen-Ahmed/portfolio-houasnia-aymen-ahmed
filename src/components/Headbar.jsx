@@ -1,11 +1,14 @@
 import { PersonalPicture } from "../assets";
 import { socialMedia, headbarItems } from "../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCar } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SocialMediaButtons from "./SocialMediaButton";
 
 const Headbar = () => {
   const [theme, setTheme] = useState("light");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
@@ -68,6 +71,27 @@ const Headbar = () => {
             ))}
           </ul>
         </nav>
+
+        {/* Travel Button */}
+        <div className="mt-auto pt-4 pb-2">
+          <button
+            onClick={() => navigate("/travel")}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-md
+                       bg-gradient-to-r from-cyan-500/10 to-violet-500/10
+                       border border-cyan-400/30 hover:border-cyan-400/70
+                       text-cyan-400 hover:text-cyan-300
+                       text-sm font-semibold tracking-wide
+                       transition-all duration-300 group
+                       hover:shadow-[0_0_16px_rgba(100,255,218,0.2)]"
+          >
+            <FontAwesomeIcon
+              icon={faCar}
+              className="group-hover:translate-x-0.5 transition-transform duration-300"
+            />
+            <span>Travel</span>
+            <span className="text-[10px] text-cyan-400/50 font-normal ml-1">3D</span>
+          </button>
+        </div>
       </div>
     </header>
   );

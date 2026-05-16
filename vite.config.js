@@ -12,18 +12,20 @@ export default defineConfig({
       output: {
         // Optimize chunk splitting for better caching
         manualChunks: {
-          vendor: ["react", "react-dom"],
+          vendor: ["react", "react-dom", "react-router-dom"],
           motion: ["framer-motion"],
           icons: [
             "@fortawesome/react-fontawesome",
             "@fortawesome/free-solid-svg-icons",
           ],
+          three: ["three"],
+          r3f: ["@react-three/fiber", "@react-three/drei"],
         },
       },
     },
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ["react", "react-dom", "framer-motion"],
+    include: ["react", "react-dom", "framer-motion", "three", "@react-three/fiber", "@react-three/drei"],
   },
 });

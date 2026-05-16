@@ -34,6 +34,14 @@ body {
   scroll-behavior: smooth;
 }
 
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out forwards;
+}
+
 .ripple {
   position: absolute;
   border-radius: 50%;
