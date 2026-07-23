@@ -45,6 +45,15 @@ export const projects = [
       "Final project featuring an innovative AI-powered medical simulation system. Combines computer vision with YOLOv8 for real-time posture detection, 3D visualization using Three.js, and a comprehensive Flutter mobile app with Firebase backend. Designed to assist healthcare professionals in neck collar treatment planning and patient education.",
   },
   {
+    id: "project-2b",
+    title: "Depot & Fleet Management System",
+    imgUrl: "<DepotFleet />",
+    stack: ["Odoo-inspired Architecture", "Python", "PostgreSQL"],
+    link: "#",
+    description:
+      "Independent business management application designed, built, and sold to a client. Covers employee scheduling and workday-based payroll, bonus (prime) tracking, employee credit accounts, equipment rental logistics, and vehicle fleet management with maintenance tracking. Full product ownership: requirements, design, build, and client sale.",
+  },
+  {
     id: "project-2",
     title: "Gift Application",
     imgUrl: webdev,
@@ -230,7 +239,7 @@ export const timeline = [
     title: "Odoo Developer",
     duration: "Present",
     details:
-      "Currently working as Odoo Developer at ITComp in Algiers, Algeria. Developing and customizing Odoo ERP solutions for various clients.",
+      "Currently working as Odoo Techno-Functional Consultant at ITComp in Algiers, Algeria. Own full implementation lifecycle for 2 enterprise clients: requirements gathering directly with clients, configuration, and custom Python/XML development. Delivered across Finance (Budget Management, Payroll, Asset Management), Supply Chain (Purchase, Inventory, Purchase Requests), and Operations (Sales, Tender Management, Manufacturing adapted for institutional catering).",
   },
   {
     id: 6,

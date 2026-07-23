@@ -85,11 +85,15 @@ const About = () => {
               with Excellent mention (19/20).
             </p>
             <p>
-              Currently working as <span>Odoo Developer & Consultant</span> at
-              ITComp in Algiers, Algeria. Previously worked as{" "}
-              <span>System Administrator & IT Engineer</span> at L'OURS FOR
-              OIL & GAS SERVICES and as <span>IONIC Framework Developer</span>{" "}
-              at Originova.
+              Currently working as{" "}
+              <span>Odoo Techno-Functional Consultant</span> at ITComp in
+              Algiers, Algeria — owning full implementation cycles for
+              enterprise clients, from requirements gathering to
+              configuration and custom Python/XML development across
+              Finance, Supply Chain, and Operations modules. Previously
+              worked as <span>System Administrator & IT Engineer</span> at
+              L'OURS FOR OIL & GAS SERVICES and as{" "}
+              <span>IONIC Framework Developer</span> at Originova.
             </p>
             <p>
               Skilled in <span>Programming</span>, <span>Team-working</span>,
